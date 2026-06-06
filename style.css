@@ -106,7 +106,7 @@ nav ul li a:hover::after {
 }
 
 #dark-mode-btn:hover {
-  transform: rotate(20deg) scale(1.1);
+  transform: scale(1.1);
 }
 
 #hero {
@@ -209,10 +209,10 @@ nav ul li a:hover::after {
   background: rgba(255, 255, 255, 0.15);
   transition: left 0.4s ease;
 }
-/* 
+
 .btn:hover::before {
   left: 100%;
-} */
+}
 
 .btn:hover {
   transform: translateY(-3px);
