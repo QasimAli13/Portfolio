@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-/* --- LIGHT MODE (default) --- */
 body {
   background-color: #fafafa;
   font-family: "Inter", sans-serif;
@@ -80,7 +79,6 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-/* Animated underline on nav links */
 nav ul li a::after {
   content: '';
   position: absolute;
@@ -211,10 +209,10 @@ nav ul li a:hover::after {
   background: rgba(255, 255, 255, 0.15);
   transition: left 0.4s ease;
 }
-
+/* 
 .btn:hover::before {
   left: 100%;
-}
+} */
 
 .btn:hover {
   transform: translateY(-3px);
@@ -226,7 +224,6 @@ nav ul li a:hover::after {
   box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
 }
 
-/* --- DARK MODE (toggle class) --- */
 .dark-mode {
   background-color: #0a0e27;
   color: #e2e8f0;
@@ -365,7 +362,7 @@ p {
 #about img {
   width: 160px;
   height: 160px;
-  border-radius: 55%;
+  border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
   border: 3px solid #06b6d4;
