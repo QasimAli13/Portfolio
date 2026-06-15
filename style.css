@@ -205,11 +205,13 @@ body:not(.dark-mode) #hero::before {
   position: relative;
   z-index: 1;
 }
-
 .dark-mode #hero h1 {
   background: linear-gradient(130deg, #ffffff 30%, #a5f3fc 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+
   -webkit-text-fill-color: transparent;
+  color: #ffffff; 
 }
 
 #hero p {
