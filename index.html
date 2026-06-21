@@ -1,111 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qasim Ali — Web Developer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <title>Qasim Ali — Frontend Developer</title>
 
-<body>
+    <meta
+      name="description"
+      content="Portfolio of Qasim Ali, a Frontend Developer and Software Engineering student specializing in HTML, CSS, JavaScript and React."
+    />
 
-  <header>
-    <nav>
-      <div class="logo">Q.A</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div><button class="btn" id="dark-mode-btn">🌙</button></div>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <section id="hero">
-    <h1>Hi, I am Qasim Ali</h1>
-    <p>Software Engineering Student at PUCIT Lahore</p>
-    <a href="#projects" class="btn">See My Work</a>
-  </section>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Q.A</div>
 
-  <main>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <img src="profile.jpeg" alt="Qasim Ali">
+        <div>
+          <button class="btn" id="dark-mode-btn">🌙</button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h1>Hi, I'm Qasim Ali</h1>
+
+      <p>Frontend Developer • Software Engineering Student at PUCIT Lahore</p>
+
       <p>
-        I’m a web developer in the making, currently studying at PUCIT Lahore. I believe in learning by building, so I
-        consistently work on real projects, experiment with new technologies, and improve my skills through regular
-        coding practice.
-        <br><br>
-        Outside of coding, I enjoy exploring new ideas and spending time learning about technology and development
-        trends.
+        I build responsive, user-friendly and modern web applications using
+        HTML, CSS, JavaScript and React.
       </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">See My Work</a>
+
+        <a href="qasim-ali.pdf" class="btn" target="_blank">
+          Download Resume
+        </a>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="card">
-          <h3>Portfolio Website</h3>
-          <p>This website. Built with pure HTML and CSS.</p>
-          <a href="https://github.com/QasimAli13/Portfolio.git" class="btn" target="_blank">
-  View Project
-</a>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+
+        <img src="profile.jpeg" alt="Qasim Ali" />
+
+        <div>
+          <p>
+            I'm a Software Engineering student at PUCIT Lahore with a strong
+            interest in frontend development. I enjoy transforming ideas into
+            clean, responsive and interactive web applications using modern web
+            technologies.
+
+            <br /><br />
+
+            My learning philosophy is simple:
+            <strong>build projects consistently.</strong>
+
+            Every project helps me improve my problem-solving skills, write
+            cleaner code and gain practical development experience.
+
+            <br /><br />
+
+            Currently I'm expanding my skills in JavaScript, React and Node.js
+            while looking for internship opportunities where I can contribute,
+            collaborate and continue learning.
+          </p>
+
+          <div class="skills-list">
+            <span class="skill-tag"> Frontend Development </span>
+
+            <span class="skill-tag"> Problem Solving </span>
+
+            <span class="skill-tag"> Continuous Learner </span>
+
+            <span class="skill-tag"> Open to Internships </span>
+          </div>
         </div>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+          <!-- Featured Project -->
+
+          <div class="card featured-project">
+            <h3>Weather App</h3>
+
+            <p>
+              A responsive weather application that fetches real-time weather
+              data using a weather API. Users can search any city to view
+              current temperature, weather conditions and related information
+              through a clean and responsive interface.
+            </p>
+
+            <p>
+              <strong>Technologies:</strong> HTML, CSS, JavaScript, Weather API
+            </p>
+
+            <div class="project-buttons">
+              <a
+                href="https://github.com/QasimAli13/WeatherApp.git"
+                class="btn"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio -->
+
+          <div class="card">
+            <h3>Personal Portfolio</h3>
+
+            <p>
+              A responsive portfolio website built from scratch using HTML and
+              CSS. Designed to showcase my projects, skills and journey as a
+              frontend developer while maintaining a clean modern UI.
+            </p>
+
+            <p><strong>Technologies:</strong> HTML, CSS</p>
+
+            <div class="project-buttons">
+              <a
+                href="https://github.com/QasimAli13/Portfolio.git"
+                class="btn"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- GitHub Finder -->
+
+          <div class="card">
+            <h3>GitHub Profile Finder</h3>
+
+            <p>
+              Search GitHub users using the GitHub API and instantly display
+              their profile, avatar, repositories, followers and other public
+              information inside a responsive interface.
+            </p>
+
+            <p>
+              <strong>Technologies:</strong> HTML, CSS, JavaScript, GitHub API
+            </p>
+
+            <div class="project-buttons">
+              <a
+                href="https://github.com/QasimAli13/GitHubProfileFinder.git"
+                class="btn"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+
+      <section id="experience">
+        <h2>Experience</h2>
+
         <div class="card">
-          <h3>Weather App</h3>
-          <p>A responsive weather application that fetches real-time weather data using a weather API. Users can search
-            any city to view current temperature, weather conditions, and related details. The app demonstrates API
-            integration, asynchronous JavaScript, and dynamic DOM manipulation.</p>
-          <a href="https://github.com/QasimAli13/WeatherApp.git" class="btn" target="_blank">
-            View Project
+          <h3>Frontend Development (Self Learning)</h3>
+
+          <p>
+            Continuously building personal projects to strengthen my
+            understanding of frontend development, responsive web design, API
+            integration and JavaScript fundamentals.
+          </p>
+
+          <ul>
+            <li>Built multiple responsive frontend projects.</li>
+
+            <li>Integrated REST APIs using JavaScript.</li>
+
+            <li>Practicing Git and GitHub workflow.</li>
+
+            <li>Currently learning React and Node.js.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="card">
+          <h3>Bachelor of Software Engineering</h3>
+
+          <p>
+            Punjab University College of Information Technology (PUCIT), Lahore
+          </p>
+
+          <p><strong>Status:</strong> Currently Enrolled</p>
+
+          <p>
+            Focusing on software engineering principles, web development,
+            programming fundamentals and modern technologies.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <h3>Frontend</h3>
+
+        <div class="skills-list">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Responsive Design</span>
+        </div>
+
+        <br />
+
+        <h3>Tools</h3>
+
+        <div class="skills-list">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+
+        <br />
+
+        <h3>Currently Learning</h3>
+
+        <div class="skills-list">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Let's Connect</h2>
+
+        <p>
+          I'm currently looking for internship opportunities where I can
+          contribute, learn and grow as a frontend developer.
+        </p>
+
+        <br />
+
+        <p>
+          📧 Email:
+          <a href="mailto:qa44512226@gmail.com"> qa44512226@gmail.com </a>
+        </p>
+
+        <p>
+          🐙 GitHub:
+          <a href="https://github.com/QasimAli13" target="_blank">
+            github.com/QasimAli13
           </a>
-        </div>
-        <div class="card">
-          <h3>GitHub Profile Finder</h3>
-          <p>A web application that allows users to search GitHub profiles using the GitHub API. It displays user
-            details such as avatar, username, bio, repositories, and followers with a clean and responsive UI. This
-            project demonstrates API integration and dynamic data handling using JavaScript.</p>
-          <a href="https://github.com/QasimAli13/GitHubProfileFinder.git" class="btn" target="_blank">
-  View Project
-</a>
-        </div>
-      </div>
-    </section>
+        </p>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">Figma (prototyping,wireframing)</span>
-        <span class="skill-tag">Git GitHub</span>
-        <span class="skill-tag">React.js</span>
-      </div>
-    </section>
+        <p>
+          💼 LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/qasim-ali-18b485330"
+            target="_blank"
+          >
+            linkedin.com/in/qasim-ali-18b485330
+          </a>
+        </p>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:qa44512226@gmail.com">qasim@gmail.com</a></p>
-      <p>🐙 GitHub: <a href="https://github.com/QasimAli13" target="_blank">github.com/qasim</a></p>
-      <p>💼 LinkedIn: <a
-          href="https://www.linkedin.com/in/qasim-ali-18b485330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank">linkedin.com/in/qasim</a></p>
-      <p>📄 My Resume: <a href="qasim-ali.pdf" target="_blank">Resume</a></p>
-    </section>
+        <p>
+          📄 Resume:
+          <a href="qasim-ali.pdf" target="_blank"> Download Resume </a>
+        </p>
+      </section>
+    </main>
 
+    <footer>
+      <p>
+        © 2026 Qasim Ali. Designed & Developed using HTML, CSS & JavaScript.
+      </p>
+    </footer>
 
-  </main>
-
-  <footer>
-    <p>© 2026 Qasim Ali. No bugs were harmed… intentionally.</p>
-  </footer>
-
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

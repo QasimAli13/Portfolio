@@ -546,3 +546,42 @@ footer p {
     padding: 48px 20px;
   }
 }
+
+/* 
+====================================== */
+
+
+.featured-project{
+    grid-column:span 2;
+}
+
+#experience ul{
+    margin-top:18px;
+    padding-left:20px;
+    color:var(--text-muted);
+    line-height:1.8;
+}
+
+#experience li{
+    margin-bottom:8px;
+}
+
+@media(max-width:768px){
+
+.featured-project{
+grid-column:span 1;
+}
+
+.project-buttons{
+flex-direction:column;
+}
+
+}
+
+.hero-buttons{
+    display:flex;
+    gap:16px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
