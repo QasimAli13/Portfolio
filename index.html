@@ -8,6 +8,10 @@
       name="description"
       content="Portfolio of Qasim Ali, a Frontend Developer and Software Engineering student specializing in HTML, CSS, JavaScript and React."
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -44,7 +48,6 @@
     <main>
       <h2>About Me</h2>
       <section id="about">
-        
         <img src="profile.jpeg" alt="Qasim Ali" />
         <div>
           <p>
@@ -175,72 +178,117 @@
 
       <section id="skills">
         <h2>Skills</h2>
-        <h3>Frontend</h3>
-        <div class="skills-list">
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">JavaScript (ES6+)</span>
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Responsive Design</span>
-        </div>
+        <div class="skills-card">
+          <h3>Frontend</h3>
+          <div class="skills-list">
+            <span class="skill-tag">
+              <i class="fa-brands fa-html5"></i>
+              HTML5
+            </span>
 
-        <br />
+            <span class="skill-tag">
+              <i class="fa-brands fa-css3-alt"></i>
+              CSS3
+            </span>
 
-        <h3>Tools</h3>
-        <div class="skills-list">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Figma</span>
-        </div>
+            <span class="skill-tag">
+              <i class="fa-brands fa-js"></i>
+              JavaScript (ES6+)
+            </span>
 
-        <br />
+            <span class="skill-tag">
+              <i class="fa-brands fa-react"></i>
+              React.js
+            </span>
 
-        <h3>Currently Learning</h3>
-        <div class="skills-list">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">
+              <i class="fa-solid fa-mobile-screen"></i>
+              Responsive Design
+            </span>
+          </div>
+
+          <h3>Tools</h3>
+          <div class="skills-list">
+            <span class="skill-tag">
+              <i class="fa-brands fa-git-alt"></i>
+              Git
+            </span>
+
+            <span class="skill-tag">
+              <i class="fa-brands fa-github"></i>
+              GitHub
+            </span>
+
+            <span class="skill-tag">
+              <i class="fa-solid fa-code"></i>
+              VS Code
+            </span>
+
+            <span class="skill-tag">
+              <i class="fa-brands fa-figma"></i>
+              Figma
+            </span>
+          </div>
+
+          <h3>Currently Learning</h3>
+          <div class="skills-list">
+            <span class="skill-tag">
+              <i class="fa-brands fa-node-js"></i>
+              Node.js
+            </span>
+
+            <span class="skill-tag">
+              <i class="fa-solid fa-server"></i>
+              Express.js
+            </span>
+
+            <span class="skill-tag">
+              <i class="fa-solid fa-plug"></i>
+              REST APIs
+            </span>
+          </div>
         </div>
       </section>
 
       <section id="contact">
         <h2>Let's Connect</h2>
+
         <p>
           I'm currently looking for internship opportunities where I can
           contribute, learn and grow as a frontend developer.
         </p>
-        <br />
 
-        <p>
-          📧 Email:
-          <a href="mailto:qa44512226@gmail.com"> qa44512226@gmail.com </a>
-        </p>
-
-        <p>
-          🐙 GitHub:
-          <a href="https://github.com/QasimAli13" target="_blank">
-            github.com/QasimAli13
+        <div class="contact-grid">
+          <a href="mailto:qa44512226@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
           </a>
-        </p>
 
-        <p>
-          💼 LinkedIn:
+          <a
+            href="https://github.com/QasimAli13"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+
           <a
             href="https://www.linkedin.com/in/qasim-ali-18b485330"
             target="_blank"
+            class="contact-card"
           >
-            linkedin.com/in/qasim-ali-18b485330
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
           </a>
-        </p>
 
-        <p>
-          📄 Resume:
-          <a href="qasim-ali.pdf" target="_blank"> Resume </a>
-        </p>
+          <a href="qasim-ali.pdf" target="_blank" class="contact-card">
+            <i class="fas fa-file-alt"></i>
+            <span>Resume</span>
+          </a>
+        </div>
       </section>
     </main>
-
     <footer>
       <p>
         © 2026 Qasim Ali. Designed & Developed using HTML, CSS & JavaScript.
