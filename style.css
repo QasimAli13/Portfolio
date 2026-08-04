@@ -12,12 +12,9 @@
   --text-main: #3a312a;
   --text-muted: #6e645a;
   --border-color: #e6dfd1;
-  /* Deepened the teal gradient just a bit for better light theme contrast */
   --accent-gradient: linear-gradient(135deg, #0b7a70 0%, #095e56 100%);
   --hero-bg: #f4f0e6;
-  /* Updated grid opacity to match the deeper teal accent */
   --grid-color: rgba(11, 122, 112, 0.05);
-  /* Hero text color using deep teal */
   --hero-text: #095e56;
 }
 
@@ -129,7 +126,7 @@ nav ul li a:hover {
 }
 
 body:not(.dark-mode) nav ul li a:hover {
-  color: #0b7a70; /* Deep Teal Hover State */
+  color: #0b7a70;
 }
 
 nav ul li a:hover::after {
@@ -159,6 +156,13 @@ body:not(.dark-mode) #dark-mode-btn:hover {
   background: rgba(58, 49, 42, 0.1);
 }
 
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-main);
+  user-select: none;
+}
 #hero {
   background: var(--hero-bg);
   background-image:
@@ -347,7 +351,6 @@ p {
   font-size: 1.05rem;
 }
 
-/* Updated #about element—h2 selector removed since it's now a sibling element outside */
 #about {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -582,9 +585,6 @@ footer p {
   color: #475569;
 }
 
-/* =======================================
-   DESKTOP / TABLET RESPONSIVE SHIFTS (900px)
-======================================= */
 @media (max-width: 900px) {
   nav {
     flex-wrap: wrap;
@@ -627,14 +627,49 @@ footer p {
     gap: 24px;
   }
 }
-
 @media (max-width: 768px) {
   nav {
-    justify-content: center;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+    order: 3;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+
+    background: var(--bg-card);
+
+    padding: 24px;
+
+    border-top: 1px solid var(--border-color);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    text-align: center;
   }
 
   #dark-mode-btn {
-    margin-top: 6px;
+    margin: 0;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -687,12 +722,6 @@ footer p {
 
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
