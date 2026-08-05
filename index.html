@@ -15,211 +15,209 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">Q.A</div>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="#hero" class="brand">Qasim Ali</a>
 
-        <ul id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav class="menu" id="menu">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="nav-actions">
-          <button class="btn" id="dark-mode-btn">🌙</button>
-          <div class="hamburger" id="hamburger">☰</div>
+        <div class="actions">
+          <button id="dark-mode-btn" class="theme-btn" type="button">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button
+            id="hamburger"
+            class="menu-btn"
+            type="button"
+            aria-label="Toggle menu"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main>
-      <section id="hero">
-        <div class="hero-inner">
-          <div class="hero-text">
-            <h1>Hi, I'm Qasim Ali</h1>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-shell">
+        <div class="hero-box">
+          <h1>Hi, I'm Qasim</h1>
+          <p class="hero-role">
+            MERN Stack Developer • Software Engineering Student
+          </p>
+          <p class="hero-copy">
+            Passionate about building modern full-stack web applications with
+            the MERN stack, creating responsive user interfaces, secure REST
+            APIs, and seamless user experiences.
+          </p>
 
-            <p class="hero-role">
-              MERN Stack Developer • Software Engineering Student
-            </p>
-
-            <p class="hero-desc">
-              Passionate about building modern full-stack web applications with
-              the MERN stack, creating responsive user interfaces, secure REST
-              APIs, and seamless user experiences.
-            </p>
-
-            <div class="hero-buttons">
-              <a href="#projects" class="btn">See My Work</a>
-              <a href="qasim-ali.pdf" class="btn" target="_blank">Resume</a>
-            </div>
+          <div class="hero-cta">
+            <a href="#projects" class="primary-btn">See My Work</a>
+            <a href="qasim-ali.pdf" class="secondary-btn" target="_blank"
+              >Resume</a
+            >
           </div>
         </div>
       </section>
 
-      <section id="about">
+      <!-- About Section -->
+      <section id="about" class="content-block">
         <h2>About Me</h2>
 
-        <div class="about-grid">
-          <div class="about-image">
+        <div class="about-wrap">
+          <div class="profile-panel">
             <img src="profile.jpeg" alt="Qasim Ali" />
           </div>
 
-          <div class="about-content">
+          <div class="text-panel">
             <p>
               I'm a Software Engineering student at PUCIT Lahore with a passion
               for full-stack web development. I enjoy building modern,
               responsive and scalable web applications using the MERN stack
               while focusing on clean architecture, performance and user
               experience.
+            </p>
 
-              <br /><br />
-
+            <p>
               I believe the best way to learn is by building real-world
               projects. Each project strengthens my problem-solving skills,
               improves my coding practices and gives me hands-on experience with
               modern web technologies.
-
-              <br /><br />
-
-              I'm currently seeking internship opportunities where I can
-              contribute, collaborate and continue growing as a software
-              engineer. My long-term goal is to specialize in DevOps while
-              building a strong foundation in full-stack development.
             </p>
 
-            <div class="skills-list">
-              <span class="skill-tag">MERN Stack Development</span>
-              <span class="skill-tag">REST API Development</span>
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Open to Internships</span>
+            <p>
+              I'm currently seeking internship opportunities where I can
+              contribute, collaborate and continue growing as a software
+              engineer.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">MERN Stack</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Open to Internships</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projects">
+      <!-- Projects Section -->
+      <section id="projects" class="content-block">
         <h2>Projects</h2>
 
-        <div class="project-spotlight">
-          <div class="card featured-project">
-            <h3>PayPulse</h3>
+        <div class="featured-card">
+          <h3>PayPulse</h3>
+          <p>
+            A full-stack digital banking application that enables secure user
+            authentication, balance management, fund transfers and transaction
+            history. It features a modern responsive interface with JWT
+            authentication and a RESTful backend.
+          </p>
 
-            <p>
-              A full-stack digital banking application that enables secure user
-              authentication, balance management, fund transfers and transaction
-              history. It features a modern responsive interface with JWT
-              authentication and a RESTful backend.
-            </p>
+          <p class="tech-stack">
+            <strong>Technologies:</strong> MongoDB, Express.js, React, Node.js,
+            JWT, REST API
+          </p>
 
-            <p>
-              <strong>Technologies:</strong> MongoDB, Express.js, React,
-              Node.js, JWT, REST API
-            </p>
-
-            <div class="project-buttons">
-              <a
-                href="https://pay-pulse-three.vercel.app/"
-                class="btn"
-                target="_blank"
-              >
-                Live Demo
-              </a>
-
-              <a
-                href="https://github.com/QasimAli13/PayPulse.git"
-                class="btn"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </div>
+          <div class="link-row">
+            <a
+              href="https://pay-pulse-three.vercel.app/"
+              target="_blank"
+              class="primary-btn"
+            >
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/QasimAli13/PayPulse.git"
+              target="_blank"
+              class="secondary-btn"
+            >
+              GitHub
+            </a>
           </div>
         </div>
 
-        <div class="projects-grid">
-          <div class="card">
+        <div class="project-grid">
+          <div class="project-card">
             <h3>Weather App</h3>
             <p>
               A responsive weather application that fetches real-time weather
               data using a weather API. Users can search any city to view
-              current temperature, weather conditions and related information
-              through a clean and responsive interface.
+              current temperature, weather conditions and related information.
             </p>
-            <p>
+            <p class="tech-stack">
               <strong>Technologies:</strong> HTML, CSS, JavaScript, Weather API
             </p>
-            <div class="project-buttons">
-              <a
-                href="https://github.com/QasimAli13/WeatherApp.git"
-                class="btn"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </div>
+            <a
+              href="https://github.com/QasimAli13/WeatherApp.git"
+              target="_blank"
+              class="secondary-btn"
+            >
+              GitHub
+            </a>
           </div>
 
-          <div class="card">
+          <div class="project-card">
             <h3>GitHub Profile Finder</h3>
             <p>
               Search GitHub users using the GitHub API and instantly display
               their profile, avatar, repositories, followers and other public
               information inside a responsive interface.
             </p>
-            <p>
+            <p class="tech-stack">
               <strong>Technologies:</strong> HTML, CSS, JavaScript, GitHub API
             </p>
-            <div class="project-buttons">
-              <a
-                href="https://github.com/QasimAli13/GitHubProfileFinder.git"
-                class="btn"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </div>
+            <a
+              href="https://github.com/QasimAli13/GitHubProfileFinder.git"
+              target="_blank"
+              class="secondary-btn"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="experience">
+      <!-- Experience Section -->
+      <section id="experience" class="content-block">
         <h2>Experience</h2>
 
-        <div class="timeline">
-          <div class="timeline-item card">
-            <h3>Full-Stack Web Development (Self Learning)</h3>
+        <div class="timeline-card">
+          <h3>Full-Stack Web Development (Self Learning)</h3>
+          <p>
+            Actively building full-stack web applications using the MERN stack
+            to strengthen my understanding of frontend development, backend
+            architecture, REST APIs, authentication, database management and
+            modern development workflows.
+          </p>
 
-            <p>
-              Actively building full-stack web applications using the MERN stack
-              to strengthen my understanding of frontend development, backend
-              architecture, REST APIs, authentication, database management and
-              modern development workflows.
-            </p>
-
-            <ul>
-              <li>
-                Built responsive full-stack web applications using the MERN
-                stack.
-              </li>
-              <li>Developed secure REST APIs with Express.js and Node.js.</li>
-              <li>
-                Worked with MongoDB for database design and data management.
-              </li>
-              <li>
-                Used Git and GitHub for version control and project management.
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li>
+              Built responsive full-stack web applications using the MERN stack
+            </li>
+            <li>Developed secure REST APIs with Express.js and Node.js</li>
+            <li>Worked with MongoDB for database design and data management</li>
+            <li>
+              Used Git and GitHub for version control and project management
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section id="education">
+      <!-- Education Section -->
+      <section id="education" class="content-block">
         <h2>Education</h2>
 
-        <div class="card">
+        <div class="info-card">
           <h3>Bachelor of Software Engineering</h3>
           <p>
             Punjab University College of Information Technology (PUCIT), Lahore
@@ -232,113 +230,70 @@
         </div>
       </section>
 
-      <section id="skills">
+      <!-- Skills Section -->
+      <section id="skills" class="content-block">
         <h2>Skills</h2>
 
-        <div class="skills-bento">
-          <div class="skills-card">
+        <div class="skills-layout">
+          <div class="skill-group">
             <h3>Frontend</h3>
-            <div class="skills-list">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-html5"></i> HTML5</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-css3-alt"></i> CSS3</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-react"></i> React.js</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-mobile-screen"></i> Responsive
-                Design</span
-              >
+            <div class="skill-cloud">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Responsive Design</span>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skill-group">
             <h3>Backend</h3>
-            <div class="skills-list">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-node-js"></i> Node.js</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-server"></i> Express.js</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-database"></i> MongoDB</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-plug"></i> REST APIs</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-key"></i> JWT Authentication</span
-              >
+            <div class="skill-cloud">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">JWT Authentication</span>
             </div>
           </div>
 
-          <div class="skills-card">
-            <h3>Tools &amp; Platforms</h3>
-            <div class="skills-list">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-git-alt"></i> Git</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-github"></i> GitHub</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-code"></i> VS Code</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-linux"></i> Linux</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-paper-plane"></i> Postman</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-cloud"></i> Vercel</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-server"></i> Render</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-leaf"></i> MongoDB Atlas</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-figma"></i> Figma</span
-              >
+          <div class="skill-group">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-cloud">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">Render</span>
+              <span class="tag">MongoDB Atlas</span>
+              <span class="tag">Figma</span>
             </div>
           </div>
 
-          <div class="skills-card">
+          <div class="skill-group">
             <h3>Currently Learning</h3>
-            <div class="skills-list">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-linux"></i> Linux</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-network-wired"></i> Networking</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-cloud"></i> DevOps</span
-              >
+            <div class="skill-cloud">
+              <span class="tag">Linux</span>
+              <span class="tag">Networking</span>
+              <span class="tag">DevOps</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Let's Connect</h2>
+      <!-- Contact Section -->
+      <section id="contact" class="content-block">
+        <h2>Contact</h2>
 
-        <p>
-          I'm currently seeking internship opportunities where I can contribute,
-          collaborate and continue growing as a MERN Stack Developer.
+        <p class="contact-text">
+          Open to internships and exciting opportunities. Let's connect and make
+          something happen!
         </p>
 
-        <div class="contact-grid">
-          <a href="mailto:qa44512226@gmail.com" class="contact-card">
+        <div class="contact-links">
+          <a href="mailto:qa44512226@gmail.com" class="contact-item">
             <i class="fas fa-envelope"></i>
             <span>Email</span>
           </a>
@@ -346,7 +301,7 @@
           <a
             href="https://github.com/QasimAli13"
             target="_blank"
-            class="contact-card"
+            class="contact-item"
           >
             <i class="fab fa-github"></i>
             <span>GitHub</span>
@@ -355,13 +310,13 @@
           <a
             href="https://www.linkedin.com/in/qasim-ali-18b485330"
             target="_blank"
-            class="contact-card"
+            class="contact-item"
           >
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin-in"></i>
             <span>LinkedIn</span>
           </a>
 
-          <a href="qasim-ali.pdf" target="_blank" class="contact-card">
+          <a href="qasim-ali.pdf" target="_blank" class="contact-item">
             <i class="fas fa-file-alt"></i>
             <span>Resume</span>
           </a>
@@ -369,10 +324,8 @@
       </section>
     </main>
 
-    <footer>
-      <p>
-        © 2026 Qasim Ali. Designed & Developed using HTML, CSS & JavaScript.
-      </p>
+    <footer class="footer">
+      <p>© 2026 Qasim Ali. Built with HTML, CSS & JavaScript</p>
     </footer>
 
     <script src="script.js"></script>
