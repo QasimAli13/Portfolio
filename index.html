@@ -3,15 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Qasim Ali | MERN Stack Developer</title>
+
+    <title>Qasim Ali | Full-Stack Developer</title>
+
     <meta
       name="description"
-      content="Portfolio of Qasim Ali, a MERN Stack Developer and Software Engineering student building modern full-stack web applications using MongoDB, Express.js, React and Node.js."
+      content="Portfolio of Qasim Ali, a Software Engineering student and Full-Stack Developer building modern web applications, REST APIs, and scalable solutions using JavaScript, React, Node.js, Express.js, and MongoDB."
     />
+
+    <meta name="author" content="Qasim Ali" />
+
+    <meta property="og:title" content="Qasim Ali | Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Software Engineering student and Full-Stack Developer building modern web applications and REST APIs."
+    />
+    <meta property="og:type" content="website" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -20,7 +33,7 @@
       <div class="topbar-inner">
         <a href="#hero" class="brand">&lt;Qasim/&gt;</a>
 
-        <nav class="menu" id="menu">
+        <nav class="menu" id="menu" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -30,9 +43,15 @@
         </nav>
 
         <div class="actions">
-          <button id="dark-mode-btn" class="theme-btn" type="button">
+          <button
+            id="dark-mode-btn"
+            class="theme-btn"
+            type="button"
+            aria-label="Toggle dark mode"
+          >
             <i class="fas fa-moon"></i>
           </button>
+
           <button
             id="hamburger"
             class="menu-btn"
@@ -52,20 +71,28 @@
       <section id="hero" class="hero-shell">
         <div class="hero-box">
           <h1>Hi, I'm Qasim Ali</h1>
+
           <p class="hero-role">
-            MERN Stack Developer • Software Engineering Student
+            Full-Stack Developer • Software Engineering Student
           </p>
+
           <p class="hero-copy">
-            Passionate about building modern full-stack web applications with
-            the MERN stack, creating responsive user interfaces, secure REST
-            APIs, and seamless user experiences.
+            I build modern full-stack web applications with JavaScript, React,
+            Node.js, Express.js and MongoDB, with a focus on clean architecture,
+            secure APIs, responsive interfaces and practical user experiences.
           </p>
 
           <div class="hero-cta">
             <a href="#projects" class="primary-btn">See My Work</a>
-            <a href="QASIM ALI.pdf" class="secondary-btn" target="_blank"
-              >Resume</a
+
+            <a
+              href="QASIM ALI.pdf"
+              class="secondary-btn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              Resume
+            </a>
           </div>
         </div>
       </section>
@@ -76,32 +103,41 @@
 
         <div class="about-wrap">
           <div class="profile-panel">
-            <img src="profile.jpeg" alt="Qasim Ali" />
+            <img
+              src="profile.jpeg"
+              alt="Portrait of Qasim Ali"
+              loading="lazy"
+            />
           </div>
 
           <div class="text-panel">
             <p>
-              I'm a Software Engineering student at PUCIT Lahore with a passion
-              for full-stack web development. I enjoy building modern,
-              responsive and scalable web applications using the MERN stack
-              while focusing on clean architecture, performance and user
-              experience.
+              I'm a Software Engineering student at PUCIT Lahore and a
+              Full-Stack Developer focused on building practical, user-centered
+              web applications. I work primarily with the MERN stack and enjoy
+              turning ideas into complete applications from frontend interfaces
+              to backend APIs and database design.
             </p>
 
             <p>
-              I believe the best way to learn is by building real-world
-              projects. Each project strengthens my problem-solving skills,
-              improves my coding practices and gives me hands-on experience with
-              modern web technologies.
+              My development experience includes building responsive React
+              interfaces, designing RESTful APIs with Node.js and Express.js,
+              working with MongoDB databases, implementing JWT-based
+              authentication, integrating external APIs and deploying
+              applications through modern development platforms.
             </p>
 
             <p>
-              I'm currently seeking internship opportunities where I can
-              contribute, collaborate and continue growing as a software
+              I learn through hands-on projects and continuously strengthen my
+              software engineering fundamentals, problem-solving skills and
+              development workflow. I'm currently seeking internship
+              opportunities where I can contribute to real-world products,
+              collaborate with experienced developers and grow as a software
               engineer.
             </p>
 
             <div class="tag-row">
+              <span class="tag">Full-Stack Development</span>
               <span class="tag">MERN Stack</span>
               <span class="tag">REST APIs</span>
               <span class="tag">Problem Solving</span>
@@ -117,11 +153,13 @@
 
         <div class="featured-card">
           <h3>PayPulse</h3>
+
           <p>
-            A full-stack online banking system featuring secure JWT
-            authentication, real-time transfers, goal-based savings vaults,
-            dynamic QR code scanner for quick payments, and downloadable PDF
-            transaction receipts & account statements.
+            A full-stack online banking application built with the MERN stack.
+            PayPulse includes JWT-based authentication, secure transaction
+            workflows, real-time transfers, goal-based savings vaults, QR-based
+            payments, and downloadable PDF transaction receipts and account
+            statements.
           </p>
 
           <p class="tech-stack">
@@ -135,14 +173,17 @@
               target="_blank"
               rel="noopener noreferrer"
               class="primary-btn"
+              aria-label="View PayPulse live demo"
             >
               Live Demo
             </a>
+
             <a
               href="https://github.com/QasimAli13/PayPulse.git"
               target="_blank"
               rel="noopener noreferrer"
               class="secondary-btn"
+              aria-label="View PayPulse source code on GitHub"
             >
               GitHub
             </a>
@@ -155,9 +196,9 @@
 
             <p>
               A responsive real-time weather application that allows users to
-              search cities or detect their current location to view detailed
-              weather information. It includes hourly and 7-day forecasts,
-              weather insights, favorite cities, recent searches, and
+              search cities or detect their current location and view detailed
+              weather information. The application provides hourly and 7-day
+              forecasts, weather insights, favorite cities, recent searches and
               Celsius/Fahrenheit conversion.
             </p>
 
@@ -172,14 +213,17 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="primary-btn"
+                aria-label="View WeatherTrack live demo"
               >
                 Live Demo
               </a>
+
               <a
                 href="https://github.com/QasimAli13/WeatherApp.git"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="secondary-btn"
+                aria-label="View WeatherTrack source code on GitHub"
               >
                 GitHub
               </a>
@@ -188,18 +232,24 @@
 
           <div class="project-card">
             <h3>GitHub Profile Finder</h3>
+
             <p>
-              Search GitHub users using the GitHub API and instantly display
-              their profile, avatar, repositories, followers and other public
-              information inside a responsive interface.
+              A responsive web application that uses the GitHub API to search
+              public GitHub profiles and display profile information,
+              repositories, followers, avatars and other publicly available data
+              in a clean and user-friendly interface.
             </p>
+
             <p class="tech-stack">
               <strong>Technologies:</strong> HTML, CSS, JavaScript, GitHub API
             </p>
+
             <a
               href="https://github.com/QasimAli13/GitHubProfileFinder.git"
               target="_blank"
+              rel="noopener noreferrer"
               class="secondary-btn"
+              aria-label="View GitHub Profile Finder source code"
             >
               GitHub
             </a>
@@ -213,21 +263,39 @@
 
         <div class="timeline-card">
           <h3>Full-Stack Web Development (Self Learning)</h3>
+
           <p>
-            Actively building full-stack web applications using the MERN stack
-            to strengthen my understanding of frontend development, backend
-            architecture, REST APIs, authentication, database management and
-            modern development workflows.
+            Hands-on experience building complete web applications with the MERN
+            stack, covering frontend development, backend architecture, REST API
+            development, authentication, database management, third-party API
+            integration and deployment workflows.
           </p>
 
           <ul>
             <li>
-              Built responsive full-stack web applications using the MERN stack
+              Built responsive full-stack applications using React, Node.js,
+              Express.js and MongoDB
             </li>
-            <li>Developed secure REST APIs with Express.js and Node.js</li>
-            <li>Worked with MongoDB for database design and data management</li>
+
             <li>
-              Used Git and GitHub for version control and project management
+              Developed RESTful APIs and backend services for application
+              features and data management
+            </li>
+
+            <li>
+              Implemented JWT-based authentication and protected backend routes
+            </li>
+
+            <li>Designed and managed MongoDB databases using Mongoose</li>
+
+            <li>
+              Integrated external APIs and handled client-server data
+              communication
+            </li>
+
+            <li>
+              Used Git and GitHub for version control and maintained production
+              deployments through modern hosting platforms
             </li>
           </ul>
         </div>
@@ -239,13 +307,17 @@
 
         <div class="info-card">
           <h3>Bachelor of Software Engineering</h3>
+
           <p>
             Punjab University College of Information Technology (PUCIT), Lahore
           </p>
+
           <p><strong>Status:</strong> Currently Enrolled</p>
+
           <p>
-            Focusing on software engineering principles, web development,
-            programming fundamentals and modern technologies.
+            Studying software engineering principles, programming, data
+            structures, databases, software development methodologies, web
+            development and computer science fundamentals.
           </p>
         </div>
       </section>
@@ -256,22 +328,37 @@
 
         <div class="skills-layout">
           <div class="skill-group">
+            <h3>Languages</h3>
+
+            <div class="skill-cloud">
+              <span class="tag">JavaScript</span>
+              <span class="tag">C++</span>
+              <span class="tag">C</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
             <h3>Frontend</h3>
+
             <div class="skill-cloud">
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
               <span class="tag">JavaScript</span>
               <span class="tag">React.js</span>
               <span class="tag">Responsive Design</span>
+              <span class="tag">Axios</span>
             </div>
           </div>
 
           <div class="skill-group">
-            <h3>Backend</h3>
+            <h3>Backend & Database</h3>
+
             <div class="skill-cloud">
               <span class="tag">Node.js</span>
               <span class="tag">Express.js</span>
               <span class="tag">MongoDB</span>
+              <span class="tag">Mongoose</span>
               <span class="tag">REST APIs</span>
               <span class="tag">JWT Authentication</span>
             </div>
@@ -279,6 +366,7 @@
 
           <div class="skill-group">
             <h3>Tools & Platforms</h3>
+
             <div class="skill-cloud">
               <span class="tag">Git</span>
               <span class="tag">GitHub</span>
@@ -294,27 +382,36 @@
 
           <div class="skill-group">
             <h3>Currently Learning</h3>
+
             <div class="skill-cloud">
-              <span class="tag">Linux</span>
               <span class="tag">Networking</span>
               <span class="tag">DevOps</span>
+              <span class="tag">Cloud Fundamentals</span>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Contact Section -->
       <section id="contact" class="content-block">
         <h2>Let's Connect</h2>
+
         <p class="contact-text">
-          Got an exciting project or internship opportunity in mind?
+          Have an exciting project, internship opportunity or technical
+          collaboration in mind?
         </p>
+
         <p class="contact-subtext">
-          Drop a message, whether it's for a collaboration, technical query, or
-          just to talk tech!
+          Feel free to reach out for collaboration, technical discussions,
+          development opportunities or just to talk tech.
         </p>
 
         <div class="contact-links">
-          <a href="mailto:qa44512226@gmail.com" class="contact-item">
+          <a
+            href="mailto:qa44512226@gmail.com"
+            class="contact-item"
+            aria-label="Send an email to Qasim Ali"
+          >
             <i class="fas fa-envelope"></i>
             <span>Email</span>
           </a>
@@ -322,7 +419,9 @@
           <a
             href="https://github.com/QasimAli13"
             target="_blank"
+            rel="noopener noreferrer"
             class="contact-item"
+            aria-label="Visit Qasim Ali's GitHub profile"
           >
             <i class="fab fa-github"></i>
             <span>GitHub</span>
@@ -331,13 +430,21 @@
           <a
             href="https://www.linkedin.com/in/qasim-ali-18b485330"
             target="_blank"
+            rel="noopener noreferrer"
             class="contact-item"
+            aria-label="Visit Qasim Ali's LinkedIn profile"
           >
             <i class="fab fa-linkedin-in"></i>
             <span>LinkedIn</span>
           </a>
 
-          <a href="QASIM ALI.pdf" target="_blank" class="contact-item">
+          <a
+            href="QASIM ALI.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-item"
+            aria-label="View Qasim Ali's resume"
+          >
             <i class="fas fa-file-alt"></i>
             <span>Resume</span>
           </a>
@@ -352,3 +459,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
