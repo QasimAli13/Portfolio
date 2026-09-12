@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    <!-- Sleek Minimal Topbar -->
+    <!-- Topbar -->
     <header class="topbar">
       <div class="topbar-inner">
         <a href="#hero" class="brand">&lt;Qasim/&gt;</a>
@@ -68,7 +68,7 @@
     </header>
 
     <main>
-      <!-- Hero Section -->
+      <!-- ===== HERO ===== -->
       <section id="hero" class="hero-shell">
         <div class="hero-box">
           <span class="status-pill">Available for Internships</span>
@@ -99,11 +99,13 @@
         </div>
       </section>
 
-      <!-- About Section -->
+      <!-- ===== ABOUT ===== -->
       <section id="about" class="content-block">
-        <h2>About Me</h2>
+        <div class="section-head">
+          <h2>About Me</h2>
+        </div>
 
-        <div class="about-wrap">
+        <div class="about-wrap reveal">
           <div class="profile-panel">
             <img
               src="profile.jpeg"
@@ -139,12 +141,14 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
+      <!-- ===== PROJECTS ===== -->
       <section id="projects" class="content-block">
-        <h2>Projects</h2>
+        <div class="section-head">
+          <h2>Projects</h2>
+        </div>
 
-        <!-- Featured Project: CampusHub AI -->
-        <div class="featured-card">
+        <!-- Featured Project -->
+        <div class="featured-card reveal">
           <div class="project-img-wrap">
             <img
               src="campushub-ai.png"
@@ -191,10 +195,10 @@
           </div>
         </div>
 
-        <!-- 3 Grid Projects -->
+        <!-- Project Grid -->
         <div class="project-grid">
-          <!-- Project: PayPulse -->
-          <div class="project-card">
+          <!-- PayPulse -->
+          <div class="project-card reveal">
             <div class="project-img-wrap">
               <img
                 src="paypulse.png"
@@ -237,8 +241,8 @@
             </div>
           </div>
 
-          <!-- Project: BugTracker -->
-          <div class="project-card">
+          <!-- BugTracker -->
+          <div class="project-card reveal">
             <div class="project-img-wrap">
               <img
                 src="bugtracker.png"
@@ -280,8 +284,8 @@
             </div>
           </div>
 
-          <!-- Project: WeatherTrack -->
-          <div class="project-card">
+          <!-- WeatherTrack -->
+          <div class="project-card reveal">
             <div class="project-img-wrap">
               <img
                 src="weathertrack.png"
@@ -325,11 +329,13 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
+      <!-- ===== EXPERIENCE ===== -->
       <section id="experience" class="content-block">
-        <h2>Experience</h2>
+        <div class="section-head">
+          <h2>Experience</h2>
+        </div>
 
-        <div class="timeline-card">
+        <div class="timeline-card reveal">
           <div class="timeline-meta">
             <h3>Full-Stack Web Development</h3>
             <span class="timeline-date">Project-Based Engineering</span>
@@ -353,11 +359,13 @@
         </div>
       </section>
 
-      <!-- Education Section -->
+      <!-- ===== EDUCATION ===== -->
       <section id="education" class="content-block">
-        <h2>Education</h2>
+        <div class="section-head">
+          <h2>Education</h2>
+        </div>
 
-        <div class="info-card">
+        <div class="info-card reveal">
           <div class="timeline-meta">
             <h3>Bachelor of Science in Software Engineering</h3>
             <span class="timeline-date">Currently Enrolled</span>
@@ -375,12 +383,14 @@
         </div>
       </section>
 
-      <!-- Skills Section -->
+      <!-- ===== SKILLS ===== -->
       <section id="skills" class="content-block">
-        <h2>Skills</h2>
+        <div class="section-head">
+          <h2>Skills</h2>
+        </div>
 
         <div class="skills-layout">
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Languages</h3>
             <div class="skill-cloud">
               <span class="tag">JavaScript (ES6+)</span>
@@ -389,7 +399,7 @@
             </div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Frontend</h3>
             <div class="skill-cloud">
               <span class="tag">React.js</span>
@@ -401,7 +411,7 @@
             </div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Backend & Database</h3>
             <div class="skill-cloud">
               <span class="tag">Node.js</span>
@@ -413,7 +423,7 @@
             </div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Tools & Deployment</h3>
             <div class="skill-cloud">
               <span class="tag">Git & GitHub</span>
@@ -428,74 +438,104 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- ===== CONTACT — fully restructured ===== -->
       <section id="contact" class="content-block">
-        <h2>Get In Touch</h2>
+        <div class="section-head">
+          <h2>Get In Touch</h2>
+        </div>
 
         <div class="contact-shell">
-          <!-- Left: Direct Details -->
-          <div class="contact-info-panel">
+          <!-- LEFT: intro + contact methods -->
+          <div class="contact-info-panel reveal">
+            <span class="contact-eyebrow">Available for work</span>
+
             <h3 class="contact-lead-title">
-              Let's build something exceptional together.
+              Let's build something worth shipping.
             </h3>
 
             <p class="contact-lead-desc">
-              Whether you have an internship opportunity, a project to
-              collaborate on, or want to discuss full-stack development and
-              DevOps—my inbox is always open.
+              Internship, collaboration, or just a good conversation about
+              full-stack engineering — my inbox is always open. I usually reply
+              within a day or two.
             </p>
 
-            <div class="contact-cards-grid">
-              <a href="mailto:qa44512226@gmail.com" class="contact-card-item">
-                <i class="fas fa-envelope contact-icon"></i>
-                <div>
-                  <span class="contact-label">Email</span>
-                  <p class="contact-value">qa44512226@gmail.com</p>
-                </div>
-              </a>
+            <ul class="contact-list">
+              <li>
+                <a href="mailto:qa44512226@gmail.com" class="contact-row">
+                  <span class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="contact-text">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">qa44512226@gmail.com</span>
+                  </span>
+                  <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+              </li>
 
-              <a
-                href="https://github.com/QasimAli13"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card-item"
-              >
-                <i class="fab fa-github contact-icon"></i>
-                <div>
-                  <span class="contact-label">GitHub</span>
-                  <p class="contact-value">github.com/QasimAli13</p>
-                </div>
-              </a>
+              <li>
+                <a
+                  href="https://github.com/QasimAli13"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-row"
+                >
+                  <span class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span class="contact-text">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">github.com/QasimAli13</span>
+                  </span>
+                  <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+              </li>
 
-              <a
-                href="https://www.linkedin.com/in/qasim-ali-18b485330"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card-item"
-              >
-                <i class="fab fa-linkedin-in contact-icon"></i>
-                <div>
-                  <span class="contact-label">LinkedIn</span>
-                  <p class="contact-value">Qasim Ali</p>
-                </div>
-              </a>
-              <a
-                href="QASIM_ALI.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-card-item"
-              >
-                <i class="fas fa-file-pdf contact-icon"></i>
-                <div>
-                  <span class="contact-label">Resume</span>
-                  <p class="contact-value">Download PDF</p>
-                </div>
-              </a>
-            </div>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/qasim-ali-18b485330"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-row"
+                >
+                  <span class="contact-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </span>
+                  <span class="contact-text">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">linkedin.com/in/qasim-ali</span>
+                  </span>
+                  <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="QASIM_ALI.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-row"
+                >
+                  <span class="contact-icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span class="contact-text">
+                    <span class="contact-label">Resume</span>
+                    <span class="contact-value">Download PDF</span>
+                  </span>
+                  <i class="fas fa-arrow-right contact-arrow"></i>
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <!-- Right: Clean Functional Form -->
-          <div class="contact-form-panel">
+          <!-- RIGHT: form -->
+          <div class="contact-form-panel reveal">
+            <h3 class="form-heading">Send a message</h3>
+            <p class="form-subheading">
+              Fill the form and I'll get back to you soon.
+            </p>
+
             <form
               id="contact-form"
               class="contact-form"
@@ -510,7 +550,7 @@
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Your name"
                     required
                   />
                 </div>
@@ -521,7 +561,7 @@
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="your@email.com"
+                    placeholder="you@email.com"
                     required
                   />
                 </div>
@@ -532,8 +572,8 @@
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
-                  placeholder="Your message..."
+                  rows="5"
+                  placeholder="Tell me about your project or opportunity..."
                   required
                 ></textarea>
               </div>
@@ -547,7 +587,6 @@
       </section>
     </main>
 
-    <!-- Clean, Single-Line Footer -->
     <footer class="footer">
       <p>© 2026 Qasim Ali. All rights reserved.</p>
     </footer>
