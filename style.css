@@ -1084,3 +1084,12 @@ main {
     transform: none;
   }
 }
+::selection {
+  background: #6f5743;
+  color: #ffffff;
+}
+
+.dark-mode ::selection {
+  background: #a98b6f;
+  color: #141a17;
+}
