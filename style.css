@@ -349,8 +349,8 @@ main {
   right: -80px;
   border-radius: 50%;
   background: var(--accent);
-  opacity: 0.15;
-  filter: blur(80px);
+  opacity: 0.28;
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
   animation: float1 14s ease-in-out infinite;
@@ -365,8 +365,8 @@ main {
   left: -60px;
   border-radius: 50%;
   background: var(--accent-2);
-  opacity: 0.09;
-  filter: blur(70px);
+  opacity: 0.18;
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
   animation: float2 16s ease-in-out infinite;
@@ -401,36 +401,36 @@ main {
   position: absolute;
   top: -50%;
   left: -20%;
-  width: 45%;
+  width: 60%;
   height: 200%;
   background: linear-gradient(100deg,
       transparent,
-      color-mix(in srgb, var(--accent) 13%, transparent),
+      color-mix(in srgb, var(--accent) 30%, transparent),
       transparent);
   transform: rotate(18deg);
-  animation: streak 9s linear infinite;
+  animation: streak 6s linear infinite;
   pointer-events: none;
   z-index: -1;
-  filter: blur(40px);
+  filter: blur(50px);
 }
 
 @keyframes streak {
   0% {
-    left: -40%;
-    opacity: 0.15;
+    left: -60%;
+    opacity: 0.25;
   }
 
   40% {
-    opacity: 0.45;
+    opacity: 0.85;
   }
 
   60% {
-    opacity: 0.45;
+    opacity: 0.85;
   }
 
   100% {
-    left: 130%;
-    opacity: 0.15;
+    left: 140%;
+    opacity: 0.25;
   }
 }
 
@@ -461,7 +461,7 @@ main {
   height: 8px;
   border-radius: 50%;
   background: var(--accent);
-  animation: pulse 1.8s ease infinite;
+  animation: pulse 1.2s ease infinite;
 }
 
 @keyframes pulse {
@@ -472,7 +472,7 @@ main {
   }
 
   70% {
-    box-shadow: 0 0 0 10px transparent;
+    box-shadow: 0 0 0 12px transparent;
   }
 }
 
@@ -489,6 +489,30 @@ main {
   opacity: 0;
   transform: translateY(35px);
   animation: heroEnter 0.9s var(--ease) 0.25s forwards;
+}
+
+.hero-box h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), transparent);
+  transform-origin: left;
+  animation: lineGrow 1s var(--ease) 1.1s both;
+}
+
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .hero-role {
@@ -1485,14 +1509,14 @@ main {
     width: 300px;
     height: 300px;
     right: -160px;
-    opacity: 0.10;
+    opacity: 0.18;
   }
 
   .hero-shell::after {
     width: 200px;
     height: 200px;
     left: -120px;
-    opacity: 0.06;
+    opacity: 0.10;
   }
 
   body::before {
@@ -1532,14 +1556,14 @@ main {
     width: 220px;
     height: 220px;
     right: -140px;
-    opacity: 0.08;
+    opacity: 0.14;
   }
 
   .hero-shell::after {
     width: 160px;
     height: 160px;
     left: -100px;
-    opacity: 0.05;
+    opacity: 0.08;
   }
 
   .hero-box {
