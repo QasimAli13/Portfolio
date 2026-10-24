@@ -1,18 +1,10 @@
-/* ============================================================
-   QASIM ALI — PORTFOLIO (SUBTLE & REFINED)
-   Fonts: Unbounded + Outfit + JetBrains Mono
-   ============================================================ */
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-/* ============================================================
-   VARIABLES
-   ============================================================ */
 :root {
   --font-display: "Unbounded", sans-serif;
   --font-body: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Dark theme base */
   --bg: #080c0b;
   --bg-2: #0c1311;
   --surface: rgba(255, 255, 255, 0.04);
@@ -24,11 +16,10 @@
   --text-2: #aab9b3;
   --muted: #728079;
 
-  /* SUBTLE GREEN — slightly shifted hue, softer/teal-leaning */
-  --accent: #2dbd94;
-  --accent-2: #5fd9b4;
-  --accent-soft: rgba(45, 189, 148, 0.12);
-  --accent-line: rgba(45, 189, 148, 0.30);
+  --accent: #17a97c;
+  --accent-2: #2cc394;
+  --accent-soft: rgba(23, 169, 124, 0.13);
+  --accent-line: rgba(23, 169, 124, 0.30);
 
   --radius-sm: 10px;
   --radius: 16px;
@@ -42,13 +33,12 @@
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
   --shadow-lg: 0 40px 100px rgba(0, 0, 0, 0.42);
   --glow: 0 0 0 1px var(--accent-line),
-    0 18px 50px rgba(45, 189, 148, 0.12);
+    0 18px 50px rgba(23, 169, 124, 0.14);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Light mode */
 body:not(.dark-mode) {
   --bg: #f6f8f5;
   --bg-2: #eaf0ec;
@@ -61,21 +51,18 @@ body:not(.dark-mode) {
   --text-2: #3d504a;
   --muted: #6a7d76;
 
-  --accent: #1a9573;
-  --accent-2: #25b389;
-  --accent-soft: rgba(26, 149, 115, 0.10);
-  --accent-line: rgba(26, 149, 115, 0.28);
+  --accent: #0f8a63;
+  --accent-2: #14a67a;
+  --accent-soft: rgba(15, 138, 99, 0.11);
+  --accent-line: rgba(15, 138, 99, 0.26);
 
   --shadow-sm: 0 8px 24px rgba(20, 60, 45, 0.08);
   --shadow: 0 20px 50px rgba(20, 60, 45, 0.10);
   --shadow-lg: 0 40px 100px rgba(20, 60, 45, 0.14);
   --glow: 0 0 0 1px var(--accent-line),
-    0 18px 50px rgba(26, 149, 115, 0.10);
+    0 18px 50px rgba(15, 138, 99, 0.12);
 }
 
-/* ============================================================
-   RESET + BASE
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -104,7 +91,6 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Subtle green ambient glow */
 body::before {
   content: "";
   position: fixed;
@@ -112,7 +98,7 @@ body::before {
   z-index: -2;
   background:
     radial-gradient(50rem 35rem at 12% 0%,
-      color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+      color-mix(in srgb, var(--accent) 17%, transparent), transparent 60%),
     radial-gradient(45rem 30rem at 88% 8%,
       color-mix(in srgb, var(--accent-2) 9%, transparent), transparent 60%),
     radial-gradient(50rem 35rem at 50% 100%,
@@ -120,7 +106,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Subtle grid */
 body::after {
   content: "";
   position: fixed;
@@ -183,9 +168,6 @@ ul {
   border: 2px solid var(--bg);
 }
 
-/* ============================================================
-   TOPBAR
-   ============================================================ */
 .topbar {
   position: sticky;
   top: 0;
@@ -298,9 +280,6 @@ ul {
   display: none;
 }
 
-/* ============================================================
-   MAIN
-   ============================================================ */
 main {
   width: min(100% - 40px, var(--container));
   margin-inline: auto;
@@ -312,9 +291,6 @@ main {
   margin-bottom: 120px;
 }
 
-/* ============================================================
-   SECTION HEAD
-   ============================================================ */
 .section-head {
   margin-bottom: 48px;
 }
@@ -339,9 +315,6 @@ main {
   background: linear-gradient(90deg, var(--accent), transparent);
 }
 
-/* ============================================================
-   HERO — RICH BUT SUBTLE, NEW LAYOUT
-   ============================================================ */
 .hero-shell {
   min-height: calc(100svh - var(--header-h) - 40px);
   display: flex;
@@ -352,7 +325,6 @@ main {
   overflow: hidden;
 }
 
-/* Subtle vertical accent bar to the left of hero text */
 .hero-box {
   position: relative;
   width: 100%;
@@ -364,7 +336,6 @@ main {
   gap: 6px;
 }
 
-/* Big soft glow orb */
 .hero-shell::before {
   content: "";
   position: absolute;
@@ -374,7 +345,7 @@ main {
   right: -80px;
   border-radius: 50%;
   background: var(--accent);
-  opacity: 0.14;
+  opacity: 0.15;
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -390,7 +361,7 @@ main {
   left: -60px;
   border-radius: 50%;
   background: var(--accent-2);
-  opacity: 0.10;
+  opacity: 0.09;
   filter: blur(70px);
   pointer-events: none;
   z-index: 0;
@@ -421,7 +392,6 @@ main {
   }
 }
 
-/* Streak */
 .hero-box::before {
   content: "";
   position: absolute;
@@ -431,7 +401,7 @@ main {
   height: 200%;
   background: linear-gradient(100deg,
       transparent,
-      color-mix(in srgb, var(--accent) 12%, transparent),
+      color-mix(in srgb, var(--accent) 13%, transparent),
       transparent);
   transform: rotate(18deg);
   animation: streak 11s linear infinite;
@@ -447,7 +417,7 @@ main {
   }
 
   50% {
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
   100% {
@@ -456,7 +426,6 @@ main {
   }
 }
 
-/* Status pill */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -498,7 +467,6 @@ main {
   }
 }
 
-/* Title — normal text color, no gradient */
 .hero-box h1 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 7.5vw, 5rem);
@@ -513,7 +481,6 @@ main {
   animation: fadeInUp 0.9s var(--ease) 0.25s forwards;
 }
 
-/* Role */
 .hero-role {
   font-family: var(--font-mono);
   font-size: clamp(0.9rem, 2vw, 1.05rem);
@@ -524,7 +491,6 @@ main {
   animation: fadeInUp 0.9s var(--ease) 0.4s forwards;
 }
 
-/* Copy */
 .hero-copy {
   max-width: 640px;
   font-size: clamp(0.98rem, 1.6vw, 1.08rem);
@@ -534,7 +500,6 @@ main {
   animation: fadeInUp 0.9s var(--ease) 0.55s forwards;
 }
 
-/* CTA */
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
@@ -544,7 +509,6 @@ main {
   animation: fadeInUp 0.9s var(--ease) 0.7s forwards;
 }
 
-/* NEW: Hero stat strip — subtle inline, not colorful */
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
@@ -607,9 +571,6 @@ main {
   }
 }
 
-/* ============================================================
-   BUTTONS
-   ============================================================ */
 .primary-btn,
 .secondary-btn {
   position: relative;
@@ -635,13 +596,13 @@ main {
 .primary-btn {
   color: #04120d;
   background: var(--accent);
-  box-shadow: 0 12px 32px rgba(45, 189, 148, 0.25);
+  box-shadow: 0 12px 32px rgba(23, 169, 124, 0.30);
 }
 
 .primary-btn:hover {
   background: var(--accent-2);
   transform: translateY(-3px);
-  box-shadow: 0 20px 44px rgba(45, 189, 148, 0.35);
+  box-shadow: 0 20px 44px rgba(23, 169, 124, 0.38);
 }
 
 .primary-btn::before {
@@ -682,9 +643,6 @@ main {
   transform: translateY(-1px) scale(0.98);
 }
 
-/* ============================================================
-   ABOUT — NEW SPLIT WITH FLOATING BADGE
-   ============================================================ */
 .about-wrap {
   display: grid;
   grid-template-columns: minmax(220px, 300px) 1fr;
@@ -730,7 +688,6 @@ main {
   pointer-events: none;
 }
 
-/* NEW: Floating corner accent on profile */
 .profile-panel::before {
   content: "";
   position: absolute;
@@ -805,9 +762,6 @@ main {
   transform: translateY(-2px) scale(1.04);
 }
 
-/* ============================================================
-   PROJECTS — FEATURED
-   ============================================================ */
 .featured-card {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -856,7 +810,7 @@ main {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-      color-mix(in srgb, var(--accent) 12%, transparent),
+      color-mix(in srgb, var(--accent) 11%, transparent),
       transparent 60%);
   z-index: 1;
   opacity: 0;
@@ -947,9 +901,6 @@ main {
   font-size: 0.85rem;
 }
 
-/* ============================================================
-   PROJECT GRID — PROPER RESPONSIVE SIZES
-   ============================================================ */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1009,9 +960,6 @@ main {
   font-size: 0.9rem;
 }
 
-/* ============================================================
-   TIMELINE / INFO
-   ============================================================ */
 .timeline-card,
 .info-card {
   position: relative;
@@ -1132,9 +1080,6 @@ main {
   font-size: 0.97rem;
 }
 
-/* ============================================================
-   SKILLS
-   ============================================================ */
 .skills-layout {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1196,9 +1141,6 @@ main {
   font-size: 0.72rem;
 }
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
 .contact-shell {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
@@ -1338,9 +1280,6 @@ main {
   transform: translateX(4px);
 }
 
-/* ============================================================
-   FORM
-   ============================================================ */
 .form-heading {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 2.4vw, 1.6rem);
@@ -1411,9 +1350,6 @@ main {
   margin-top: 8px;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .footer {
   padding: 36px 24px;
   text-align: center;
@@ -1432,9 +1368,6 @@ main {
   color: var(--accent);
 }
 
-/* ============================================================
-   REVEAL
-   ============================================================ */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1445,10 +1378,6 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 
 @media (max-width: 1180px) {
   .menu a {
@@ -1561,7 +1490,6 @@ main {
     margin-bottom: 32px;
   }
 
-  /* ✅ PROJECTS — 1 column on mobile */
   .skills-layout,
   .project-grid {
     grid-template-columns: 1fr;
@@ -1587,7 +1515,6 @@ main {
     width: 100%;
   }
 
-  /* Hero stats become vertical list */
   .hero-stats {
     flex-direction: column;
     gap: 0;
