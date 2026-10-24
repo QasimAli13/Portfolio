@@ -20,6 +20,8 @@
   --accent-2: #2cc394;
   --accent-soft: rgba(23, 169, 124, 0.13);
   --accent-line: rgba(23, 169, 124, 0.30);
+  --accent-glow: rgba(23, 169, 124, 0.14);
+  --accent-glow-strong: rgba(23, 169, 124, 0.30);
 
   --radius-sm: 10px;
   --radius: 16px;
@@ -33,7 +35,7 @@
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
   --shadow-lg: 0 40px 100px rgba(0, 0, 0, 0.42);
   --glow: 0 0 0 1px var(--accent-line),
-    0 18px 50px rgba(23, 169, 124, 0.14);
+    0 18px 50px var(--accent-glow);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -51,16 +53,18 @@ body:not(.dark-mode) {
   --text-2: #3d504a;
   --muted: #6a7d76;
 
-  --accent: #0f8a63;
-  --accent-2: #14a67a;
-  --accent-soft: rgba(15, 138, 99, 0.11);
-  --accent-line: rgba(15, 138, 99, 0.26);
+  --accent: #0c6b4f;
+  --accent-2: #0e815e;
+  --accent-soft: rgba(12, 107, 79, 0.10);
+  --accent-line: rgba(12, 107, 79, 0.24);
+  --accent-glow: rgba(12, 107, 79, 0.10);
+  --accent-glow-strong: rgba(12, 107, 79, 0.22);
 
   --shadow-sm: 0 8px 24px rgba(20, 60, 45, 0.08);
   --shadow: 0 20px 50px rgba(20, 60, 45, 0.10);
   --shadow-lg: 0 40px 100px rgba(20, 60, 45, 0.14);
   --glow: 0 0 0 1px var(--accent-line),
-    0 18px 50px rgba(15, 138, 99, 0.12);
+    0 18px 50px var(--accent-glow);
 }
 
 *,
@@ -98,11 +102,11 @@ body::before {
   z-index: -2;
   background:
     radial-gradient(50rem 35rem at 12% 0%,
-      color-mix(in srgb, var(--accent) 17%, transparent), transparent 60%),
+      color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
     radial-gradient(45rem 30rem at 88% 8%,
-      color-mix(in srgb, var(--accent-2) 9%, transparent), transparent 60%),
+      color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 60%),
     radial-gradient(50rem 35rem at 50% 100%,
-      color-mix(in srgb, var(--accent) 7%, transparent), transparent 65%);
+      color-mix(in srgb, var(--accent) 6%, transparent), transparent 65%);
   pointer-events: none;
 }
 
@@ -404,7 +408,7 @@ main {
       color-mix(in srgb, var(--accent) 13%, transparent),
       transparent);
   transform: rotate(18deg);
-  animation: streak 11s linear infinite;
+  animation: streak 9s linear infinite;
   pointer-events: none;
   z-index: -1;
   filter: blur(40px);
@@ -413,16 +417,20 @@ main {
 @keyframes streak {
   0% {
     left: -40%;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 
-  50% {
+  40% {
+    opacity: 0.45;
+  }
+
+  60% {
     opacity: 0.45;
   }
 
   100% {
     left: 130%;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 
@@ -443,7 +451,8 @@ main {
   margin-bottom: 22px;
   width: fit-content;
   opacity: 0;
-  animation: fadeInUp 0.7s var(--ease) 0.1s forwards;
+  transform: translateY(20px);
+  animation: heroEnter 0.7s var(--ease) 0.1s forwards;
 }
 
 .status-pill::before {
@@ -478,7 +487,8 @@ main {
   word-break: break-word;
   overflow-wrap: break-word;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.25s forwards;
+  transform: translateY(35px);
+  animation: heroEnter 0.9s var(--ease) 0.25s forwards;
 }
 
 .hero-role {
@@ -488,7 +498,8 @@ main {
   color: var(--accent);
   margin-bottom: 22px;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.4s forwards;
+  transform: translateY(25px);
+  animation: heroEnter 0.8s var(--ease) 0.45s forwards;
 }
 
 .hero-copy {
@@ -497,7 +508,8 @@ main {
   color: var(--text-2);
   margin-bottom: 32px;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.55s forwards;
+  transform: translateY(25px);
+  animation: heroEnter 0.8s var(--ease) 0.6s forwards;
 }
 
 .hero-cta {
@@ -506,7 +518,8 @@ main {
   gap: 14px;
   margin-bottom: 44px;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.7s forwards;
+  transform: translateY(25px);
+  animation: heroEnter 0.8s var(--ease) 0.75s forwards;
 }
 
 .hero-stats {
@@ -520,7 +533,8 @@ main {
   overflow: hidden;
   max-width: 620px;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.85s forwards;
+  transform: translateY(25px);
+  animation: heroEnter 0.8s var(--ease) 0.9s forwards;
 }
 
 .hero-stat {
@@ -559,10 +573,10 @@ main {
   display: block;
 }
 
-@keyframes fadeInUp {
+@keyframes heroEnter {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
   }
 
   to {
@@ -596,13 +610,13 @@ main {
 .primary-btn {
   color: #04120d;
   background: var(--accent);
-  box-shadow: 0 12px 32px rgba(23, 169, 124, 0.30);
+  box-shadow: 0 12px 32px var(--accent-glow-strong);
 }
 
 .primary-btn:hover {
   background: var(--accent-2);
   transform: translateY(-3px);
-  box-shadow: 0 20px 44px rgba(23, 169, 124, 0.38);
+  box-shadow: 0 20px 44px var(--accent-glow-strong);
 }
 
 .primary-btn::before {
@@ -1468,11 +1482,25 @@ main {
   }
 
   .hero-shell::before {
-    right: -120px;
+    width: 300px;
+    height: 300px;
+    right: -160px;
+    opacity: 0.10;
   }
 
   .hero-shell::after {
-    left: -100px;
+    width: 200px;
+    height: 200px;
+    left: -120px;
+    opacity: 0.06;
+  }
+
+  body::before {
+    background:
+      radial-gradient(30rem 20rem at 12% 0%,
+        color-mix(in srgb, var(--accent) 9%, transparent), transparent 65%),
+      radial-gradient(25rem 18rem at 88% 8%,
+        color-mix(in srgb, var(--accent-2) 5%, transparent), transparent 65%);
   }
 }
 
@@ -1498,6 +1526,20 @@ main {
   .hero-shell {
     min-height: auto;
     padding-block: 30px 50px;
+  }
+
+  .hero-shell::before {
+    width: 220px;
+    height: 220px;
+    right: -140px;
+    opacity: 0.08;
+  }
+
+  .hero-shell::after {
+    width: 160px;
+    height: 160px;
+    left: -100px;
+    opacity: 0.05;
   }
 
   .hero-box {
@@ -1566,6 +1608,12 @@ main {
 
   .project-card .project-img-wrap {
     min-height: 200px;
+  }
+
+  body::before {
+    background:
+      radial-gradient(25rem 18rem at 12% 0%,
+        color-mix(in srgb, var(--accent) 6%, transparent), transparent 65%);
   }
 }
 
@@ -1682,6 +1730,7 @@ main {
   .hero-cta,
   .hero-stats {
     opacity: 1;
+    transform: none;
     animation: none;
   }
 }
