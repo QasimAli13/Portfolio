@@ -217,7 +217,7 @@ main {
   width: calc(100% - 80px);
   max-width: var(--container);
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 80px;
 }
 
