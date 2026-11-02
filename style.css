@@ -278,6 +278,7 @@ main {
   height: 460px;
   background: radial-gradient(circle, var(--accent-soft), transparent 65%);
   z-index: -1;
+  animation: glowPulse 4s ease-in-out infinite;
 }
 
 .hero-shell::after {
@@ -294,6 +295,7 @@ main {
   opacity: 0.15;
   z-index: -1;
   pointer-events: none;
+  animation: floatCode 5s ease-in-out infinite;
 }
 
 .hero-eyebrow {
@@ -848,10 +850,10 @@ main {
 }
 
 .contact-row:hover .contact-icon {
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+  background: var(--accent-warm-soft);
   transform: rotate(-15deg) scale(1.1);
-  color: var(--accent-ink);
-  background: var(--accent);
-  border-color: var(--accent);
 }
 
 .contact-text {
@@ -1186,7 +1188,6 @@ main {
     width: 280px;
     height: 280px;
     background: radial-gradient(circle, var(--accent-warm-soft), transparent 70%);
-    animation: glowPulse 4s ease-in-out infinite;
   }
 
   /* </> upar right mai float karta hai */
@@ -1196,7 +1197,6 @@ main {
     right: 0;
     margin-top: 0;
     opacity: 0.12;
-    animation: floatCode 5s ease-in-out infinite;
   }
 
   .hero-eyebrow {
