@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 
-/* ============ THEME ============ */
 :root {
   --font-display: "Unbounded", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -51,7 +50,6 @@ body:not(.dark-mode) {
   --accent-warm-soft: rgba(122, 106, 66, 0.12);
 }
 
-/* ============ RESET ============ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -112,7 +110,6 @@ ul {
   outline-offset: 3px;
 }
 
-/* ============ HEADER ============ */
 .topbar {
   position: fixed;
   top: 14px;
@@ -152,6 +149,10 @@ ul {
   font-weight: 700;
   white-space: nowrap;
   transition: color 0.2s ease;
+}
+
+.brand .accent {
+  color: var(--accent-2);
 }
 
 .brand:hover {
@@ -212,7 +213,6 @@ ul {
   display: none;
 }
 
-/* ============ PAGE FRAME ============ */
 main {
   width: calc(100% - 80px);
   max-width: var(--container);
@@ -232,7 +232,6 @@ main {
   padding-top: 0;
 }
 
-/* ============ SECTION HEADINGS ============ */
 .section-head {
   margin-bottom: 40px;
 }
@@ -256,87 +255,61 @@ main {
   border-bottom: 1px solid var(--line-2);
 }
 
-/* ============ HERO ============ */
 .hero-shell {
   position: relative;
   isolation: isolate;
-  min-height: 600px;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  padding: 40px 0;
+  padding: 70px 0 100px;
   overflow: hidden;
+  background: var(--bg);
 }
 
-.hero-shell::before {
-  content: "";
+.hero-canvas {
   position: absolute;
-  right: -50px;
-  top: 50%;
-  margin-top: -230px;
-  width: 460px;
-  height: 460px;
-  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
-  z-index: -1;
-  animation: glowPulse 4s ease-in-out infinite;
-}
-
-.hero-shell::after {
-  content: "</>";
-  position: absolute;
-  right: 2%;
-  top: 50%;
-  margin-top: -100px;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 11rem;
-  letter-spacing: -0.05em;
-  color: var(--accent);
-  opacity: 0.15;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   pointer-events: none;
-  animation: floatCode 5s ease-in-out infinite;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 55%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 42px;
+  max-width: 920px;
+  padding: 0 16px;
+  width: 100%;
 }
 
 .hero-eyebrow {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--accent-warm);
-  margin-bottom: 22px;
-  padding: 7px 14px;
-  background: var(--accent-warm-soft);
-  border: 1px solid var(--accent-warm);
-  border-radius: 999px;
   animation: fadeUp 0.7s ease both;
-  max-width: 100%;
-}
-
-.hero-eyebrow::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-warm);
-  flex-shrink: 0;
-  animation: pulseDot 2.4s ease-out infinite;
 }
 
 .hero-title {
-  max-width: 20ch;
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-size: clamp(3.2rem, 8.5vw, 6.4rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  color: var(--text);
   animation: fadeUp 0.8s ease 0.1s both;
 }
 
@@ -345,56 +318,60 @@ main {
 }
 
 .hero-role {
-  max-width: 54ch;
-  font-size: 1.1rem;
+  max-width: 58ch;
+  font-family: var(--font-body);
+  font-size: 1.06rem;
+  line-height: 1.75;
   color: var(--text-2);
-  margin-bottom: 28px;
-  padding-left: 16px;
-  border-left: 3px solid var(--accent-warm);
   animation: fadeUp 0.8s ease 0.2s both;
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 42px;
+  justify-content: center;
+  gap: 14px;
   animation: fadeUp 0.8s ease 0.3s both;
 }
 
 .hero-facts {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 36px;
+  justify-content: center;
+  gap: 20px 72px;
+  margin-top: 24px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  max-width: 640px;
   animation: fadeUp 0.8s ease 0.4s both;
 }
 
 .hero-fact {
-  display: grid;
-  gap: 3px;
-  padding-left: 14px;
-  border-left: 2px solid var(--line-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.hero-fact:hover {
-  border-color: var(--accent-warm);
-}
-
-.hero-fact span {
+.hero-fact-label {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.13em;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-.hero-fact strong {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
+.hero-fact-value {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
 }
 
-/* ============ BUTTONS ============ */
 .primary-btn,
 .secondary-btn {
   display: inline-flex;
@@ -436,7 +413,6 @@ main {
   transform: translateY(-2px);
 }
 
-/* ============ ABOUT ============ */
 .about-wrap {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -531,11 +507,35 @@ main {
   font-size: 0.9rem;
 }
 
-/* ============ PROJECTS ============ */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.project-scroller {
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0 24px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2) transparent;
+}
+
+.project-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+
+.project-scroller::-webkit-scrollbar-track {
+  background: var(--line);
+  border-radius: 3px;
+}
+
+.project-scroller::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+  border-radius: 3px;
+}
+
+.project-scroller::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
 .featured-card,
@@ -549,10 +549,16 @@ main {
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.featured-card {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
+.project-scroller .featured-card {
+  flex: 0 0 440px;
+  min-width: 440px;
+  scroll-snap-align: start;
+}
+
+.project-scroller .project-card {
+  flex: 0 0 400px;
+  min-width: 400px;
+  scroll-snap-align: start;
 }
 
 .featured-card:hover,
@@ -566,14 +572,15 @@ main {
 .project-img-wrap {
   overflow: hidden;
   background: var(--bg-2);
-  min-height: 190px;
+  min-height: 180px;
+  max-height: 180px;
   border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
 }
 
 .featured-card .project-img-wrap {
-  min-height: 330px;
-  border-bottom: none;
-  border-right: 1px solid var(--line);
+  min-height: 220px;
+  max-height: 220px;
 }
 
 .project-img {
@@ -581,6 +588,7 @@ main {
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
+  display: block;
 }
 
 .featured-card:hover .project-img,
@@ -591,20 +599,21 @@ main {
 .project-content {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 22px 22px 20px;
   flex: 1;
+  gap: 4px;
 }
 
 .featured-card .project-content {
-  padding: 40px;
-  justify-content: center;
+  padding: 24px 26px;
+  justify-content: flex-start;
 }
 
 .project-label {
   width: fit-content;
-  margin-bottom: 13px;
+  margin-bottom: 10px;
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--accent-warm);
@@ -614,33 +623,39 @@ main {
 
 .project-content h3 {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
   margin-bottom: 10px;
+  color: var(--text);
 }
 
 .featured-card .project-content h3 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
 }
 
 .project-content p {
   color: var(--text-2);
   font-size: 0.9rem;
+  line-height: 1.6;
   margin-bottom: 10px;
 }
 
 .featured-card .project-content p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   max-width: 58ch;
 }
 
 .tech-text {
   font-family: var(--font-mono) !important;
-  font-size: 0.65rem !important;
+  font-size: 0.62rem !important;
   color: var(--muted) !important;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  padding: 10px 0 0;
+  border-top: 1px dashed var(--line);
+  margin-bottom: 0 !important;
 }
 
 .link-row {
@@ -648,7 +663,7 @@ main {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 
@@ -656,9 +671,9 @@ main {
 .link-row .secondary-btn {
   padding: 10px 15px;
   font-size: 0.62rem;
+  letter-spacing: 0.1em;
 }
 
-/* ============ EXPERIENCE / EDUCATION ============ */
 .timeline-card,
 .info-card {
   padding: 26px;
@@ -736,7 +751,6 @@ main {
   max-width: 72ch;
 }
 
-/* ============ SKILLS ============ */
 .skills-layout {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -779,7 +793,6 @@ main {
   font-size: 0.6rem;
 }
 
-/* ============ CONTACT ============ */
 .contact-shell {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -968,7 +981,6 @@ main {
   color: #e8674a;
 }
 
-/* ============ FOOTER ============ */
 .footer {
   padding: 26px 20px;
   text-align: center;
@@ -983,7 +995,6 @@ main {
   color: var(--muted);
 }
 
-/* ============ MOTION ============ */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1007,82 +1018,27 @@ main {
   }
 }
 
-@keyframes pulseDot {
-  0% {
-    box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.5);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(201, 169, 97, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(201, 169, 97, 0);
-  }
-}
-
-@keyframes floatCode {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-14px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes glowPulse {
-  0% {
-    opacity: 0.6;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
-}
-
-/* ============ TABLET ============ */
 @media (max-width: 1024px) {
-
-  .skills-layout,
-  .project-grid {
+  .skills-layout {
     grid-template-columns: 1fr 1fr;
   }
 
-  .featured-card {
-    grid-template-columns: 1fr;
+  .project-scroller .featured-card {
+    flex: 0 0 400px;
+    min-width: 400px;
   }
 
-  .featured-card .project-img-wrap {
-    min-height: 250px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .hero-title {
-    font-size: 4rem;
-  }
-
-  .hero-shell::after {
-    font-size: 8rem;
+  .project-scroller .project-card {
+    flex: 0 0 380px;
+    min-width: 380px;
   }
 }
 
-/* ============ MOBILE ============ */
 @media (max-width: 880px) {
   :root {
     --header-h: 56px;
   }
 
-  /* navbar */
   .topbar {
     top: 10px;
     width: calc(100% - 24px);
@@ -1131,7 +1087,6 @@ main {
     display: grid;
   }
 
-  /* page */
   main {
     width: calc(100% - 32px);
     padding-top: 0;
@@ -1168,128 +1123,90 @@ main {
     max-width: 320px;
   }
 
-  /* ---------- MOBILE HERO ---------- */
-  /* poori screen ki height, content beech mai */
   .hero-shell {
-    min-height: 100vh;
-    min-height: 100svh;
-    justify-content: center;
-    padding: 96px 0 40px 0;
-    background: radial-gradient(circle at 100% 0%, rgba(61, 139, 158, 0.22), transparent 55%);
+    min-height: auto;
+    padding: 140px 0 40px;
+    justify-content: flex-start;
   }
 
-  /* neeche left ka gold glow (pulse) */
-  .hero-shell::before {
-    left: -60px;
-    right: auto;
-    top: auto;
-    bottom: 0;
-    margin-top: 0;
-    width: 280px;
-    height: 280px;
-    background: radial-gradient(circle, var(--accent-warm-soft), transparent 70%);
-  }
-
-  /* </> upar right mai float karta hai */
-  .hero-shell::after {
-    font-size: 5.5rem;
-    top: 84px;
-    right: 0;
-    margin-top: 0;
-    opacity: 0.12;
+  .hero-content {
+    gap: 32px;
+    padding: 0 4px;
   }
 
   .hero-eyebrow {
     font-size: 0.6rem;
-    padding: 7px 13px;
-    letter-spacing: 0.1em;
-    margin-bottom: 30px;
+    letter-spacing: 0.2em;
   }
 
   .hero-title {
-    font-size: 14vw;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    max-width: 100%;
-    overflow-wrap: break-word;
-    margin-bottom: 34px;
+    font-size: clamp(2.8rem, 14vw, 4.4rem);
   }
 
   .hero-role {
     font-size: 0.98rem;
-    line-height: 1.65;
     max-width: 100%;
-    margin-bottom: 38px;
-    padding-left: 14px;
   }
 
   .hero-cta {
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 14px;
-    margin-bottom: 42px;
+    width: 100%;
+    gap: 12px;
   }
 
   .hero-cta .primary-btn,
   .hero-cta .secondary-btn {
     width: 100%;
-    padding: 16px;
+    padding: 15px;
     font-size: 0.7rem;
   }
 
-  .hero-cta .primary-btn {
-    box-shadow: 0 10px 25px rgba(61, 139, 158, 0.35);
-  }
-
   .hero-facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 18px 28px;
+    margin-top: 16px;
+    padding-top: 20px;
+    max-width: 100%;
   }
 
   .hero-fact {
-    position: relative;
-    gap: 6px;
-    min-width: 0;
-    padding: 20px 14px 16px 14px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--accent-warm);
-    border-radius: 12px;
+    flex: 1 1 calc(50% - 14px);
+    min-width: 120px;
   }
 
-  .hero-fact:last-child:nth-child(odd) {
-    grid-column: 1 / 3;
+  .hero-fact-value {
+    font-size: 0.7rem;
   }
 
-  .hero-fact span {
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
+  .project-scroller {
+    gap: 14px;
+    padding-bottom: 20px;
+    margin-right: -16px;
+    padding-right: 16px;
   }
 
-  .hero-fact strong {
-    font-size: 0.86rem;
-    line-height: 1.3;
-    overflow-wrap: anywhere;
+  .project-scroller .featured-card {
+    flex: 0 0 82vw;
+    min-width: 82vw;
   }
 
-  /* other sections */
-  .skills-layout,
-  .project-grid {
-    grid-template-columns: 1fr;
+  .project-scroller .project-card {
+    flex: 0 0 86vw;
+    min-width: 86vw;
   }
 
-  .featured-card .project-content,
-  .project-content {
-    padding: 22px;
-  }
-
-  .featured-card .project-content h3 {
-    font-size: 1.3rem;
+  .project-img-wrap {
+    min-height: 160px;
+    max-height: 160px;
   }
 
   .featured-card .project-img-wrap {
-    min-height: 200px;
+    min-height: 180px;
+    max-height: 180px;
+  }
+
+  .skills-layout {
+    grid-template-columns: 1fr;
   }
 
   .timeline-card,
@@ -1329,26 +1246,6 @@ main {
   }
 }
 
-/* ============ SMALL PHONES ============ */
-@media (max-width: 400px) {
-  .hero-shell {
-    padding-top: 90px;
-  }
-
-  .hero-title {
-    font-size: 13.5vw;
-  }
-
-  .hero-role {
-    font-size: 0.93rem;
-  }
-
-  .hero-fact {
-    padding: 18px 12px 14px 12px;
-  }
-}
-
-/* sirf smooth scroll band hota hai, animations nahi */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

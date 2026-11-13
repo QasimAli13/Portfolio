@@ -61,41 +61,43 @@
 
     <main>
       <section id="hero" class="hero-shell">
-        <div class="hero-eyebrow">OPEN TO OPPORTUNITIES</div>
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
 
-        <h1 class="hero-title">Qasim <span class="accent">Ali.</span></h1>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Full-Stack Developer · Lahore, PK</div>
 
-        <p class="hero-role">
-          Building intelligent web applications, scalable backend systems, and
-          practical AI solutions that solve real-world problems.
-        </p>
+          <h1 class="hero-title">Qasim <span class="accent">Ali.</span></h1>
 
-        <div class="hero-cta">
-          <a href="#projects" class="primary-btn">Explore My Work</a>
-          <a
-            href="QASIM_ALI.pdf"
-            class="secondary-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Resume
-          </a>
-        </div>
+          <p class="hero-role">
+            Building intelligent web applications, scalable backend systems, and
+            practical AI solutions that solve real-world problems.
+          </p>
 
-        <div class="hero-facts">
-          <div class="hero-fact">
-            <span>TECH STACK</span>
-            <strong>MERN Stack & AI</strong>
+          <div class="hero-cta">
+            <a href="#projects" class="primary-btn">View Projects</a>
+            <a
+              href="QASIM_ALI.pdf"
+              class="secondary-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Resume
+            </a>
           </div>
 
-          <div class="hero-fact">
-            <span>EDUCATION</span>
-            <strong>SE PUCIT</strong>
-          </div>
-
-          <div class="hero-fact">
-            <span>BASED IN</span>
-            <strong>Lahore, Pakistan</strong>
+          <div class="hero-facts">
+            <div class="hero-fact">
+              <span class="hero-fact-label">Stack</span>
+              <span class="hero-fact-value">MERN &amp; AI</span>
+            </div>
+            <div class="hero-fact">
+              <span class="hero-fact-label">Education</span>
+              <span class="hero-fact-value">SE @ PUCIT</span>
+            </div>
+            <div class="hero-fact">
+              <span class="hero-fact-label">Location</span>
+              <span class="hero-fact-value">Lahore, PK</span>
+            </div>
           </div>
         </div>
       </section>
@@ -156,7 +158,7 @@
           <h2>Projects</h2>
         </div>
 
-        <div class="project-grid">
+        <div class="project-scroller">
           <article class="featured-card reveal">
             <div class="project-img-wrap">
               <img
@@ -218,7 +220,7 @@
               <h3>PayPulse</h3>
               <p>
                 A digital banking-style app built to understand money movement
-                properly — transfers, verification, savings goals, transaction
+                properly; transfers, verification, savings goals, transaction
                 history, and PDF statements. The real work was in state handling
                 and security, not just in making the UI look like a banking app.
               </p>
@@ -305,7 +307,7 @@
               <p>
                 A smaller project, but one I actually use. It pulls
                 location-based weather from Open-Meteo and shows current
-                conditions, hourly changes, and a seven-day forecast — clean and
+                conditions, hourly changes, and a seven-day forecast, clean and
                 without unnecessary complexity.
               </p>
               <p class="tech-text">
@@ -361,7 +363,7 @@
             </li>
             <li>
               <strong>Deployed and maintained projects</strong> with Git,
-              GitHub, Vercel, and Render — including the less glamorous parts:
+              GitHub, Vercel, and Render including the less glamorous parts:
               environment variables, CORS, and production debugging.
             </li>
           </ul>
