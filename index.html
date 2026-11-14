@@ -3,13 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Qasim Ali — Full-Stack Developer</title>
-
     <meta name="description" content="Qasim Ali, Full-Stack Developer." />
-
     <link rel="icon" type="image/png" href="favicon.png" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -21,12 +17,11 @@
     <header class="topbar">
       <div class="topbar-inner">
         <a href="#hero" class="brand"
-          ><span class="accent">&lt;</span>qasim<span class="accent">
-            /&gt;</span
+          ><span class="accent">&lt;</span>qasim<span class="accent"
+            >/&gt;</span
           ></a
         >
-
-        <nav class="menu" id="menu" aria-label="Main navigation">
+        <nav class="menu" id="menu">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -34,7 +29,6 @@
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </nav>
-
         <div class="actions">
           <button
             id="dark-mode-btn"
@@ -44,14 +38,11 @@
           >
             <i class="fas fa-moon"></i>
           </button>
-
           <button
             id="hamburger"
             class="menu-btn"
             type="button"
             aria-label="Toggle menu"
-            aria-controls="menu"
-            aria-expanded="false"
           >
             <i class="fas fa-bars"></i>
           </button>
@@ -60,19 +51,18 @@
     </header>
 
     <main>
+      <!-- HERO SECTION -->
       <section id="hero" class="hero-shell">
-        <canvas class="hero-canvas" aria-hidden="true"></canvas>
+        <!-- SHIMMER ANIMATION BACKGROUND -->
+        <div class="hero-shimmer" aria-hidden="true"></div>
 
         <div class="hero-content">
-          <div class="hero-eyebrow">Full-Stack Developer · Lahore, PK</div>
-
+          <div class="hero-eyebrow">OPEN TO OPPORTUNITIES</div>
           <h1 class="hero-title">Qasim <span class="accent">Ali.</span></h1>
-
           <p class="hero-role">
             Building intelligent web applications, scalable backend systems, and
             practical AI solutions that solve real-world problems.
           </p>
-
           <div class="hero-cta">
             <a href="#projects" class="primary-btn">View Projects</a>
             <a
@@ -80,34 +70,32 @@
               class="secondary-btn"
               target="_blank"
               rel="noopener noreferrer"
+              >Download Resume</a
             >
-              Download Resume
-            </a>
           </div>
-
           <div class="hero-facts">
             <div class="hero-fact">
-              <span class="hero-fact-label">Stack</span>
+              <span class="hero-fact-label">STACK</span>
               <span class="hero-fact-value">MERN &amp; AI</span>
             </div>
             <div class="hero-fact">
-              <span class="hero-fact-label">Education</span>
+              <span class="hero-fact-label">EDUCATION</span>
               <span class="hero-fact-value">SE @ PUCIT</span>
             </div>
             <div class="hero-fact">
-              <span class="hero-fact-label">Location</span>
+              <span class="hero-fact-label">LOCATION</span>
               <span class="hero-fact-value">Lahore, PK</span>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ABOUT SECTION -->
       <section id="about" class="content-block">
         <div class="section-head">
           <span class="section-index">01</span>
           <h2>About Me</h2>
         </div>
-
         <div class="about-wrap reveal">
           <div class="profile-panel">
             <img
@@ -116,7 +104,6 @@
               loading="lazy"
             />
           </div>
-
           <div class="text-panel">
             <p>
               I’m a Software Engineering student at PUCIT Lahore, currently
@@ -125,21 +112,18 @@
               the API, handling edge cases, and making the interface feel
               obvious to use.
             </p>
-
             <p>
               Lately I’ve been focused on practical AI features, authentication
               flows, and getting comfortable with Docker and deployment. I’m
               early in my career, but I build consistently — and I make a point
               of understanding why something breaks before I move on.
             </p>
-
             <div class="tag-row">
               <span class="tag">MERN Stack</span>
               <span class="tag">AI Integration</span>
               <span class="tag">REST APIs</span>
               <span class="tag">Docker / DevOps</span>
             </div>
-
             <div class="currently-note">
               <span class="currently-label">Currently</span>
               <p>
@@ -152,12 +136,12 @@
         </div>
       </section>
 
+      <!-- PROJECTS SECTION -->
       <section id="projects" class="content-block">
         <div class="section-head">
           <span class="section-index">02</span>
           <h2>Projects</h2>
         </div>
-
         <div class="project-scroller">
           <article class="featured-card reveal">
             <div class="project-img-wrap">
@@ -168,40 +152,34 @@
                 loading="lazy"
               />
             </div>
-
             <div class="project-content">
               <span class="project-label">Flagship Project</span>
               <h3>CampusHub AI — Smart University ERP</h3>
-
               <p>
                 My largest project so far: a university management platform with
                 separate roles for admins, faculty, and students. It includes an
                 AI assistant built on OpenRouter that lets users query academic
                 information directly instead of digging through menus.
               </p>
-
               <p class="tech-text">
                 React 19 / Vite / Node.js / Express / MongoDB / OpenRouter AI /
                 JWT
               </p>
-
               <div class="link-row">
                 <a
                   href="https://campus-hub-ai.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="primary-btn"
+                  >Live Demo</a
                 >
-                  Live Demo
-                </a>
                 <a
                   href="https://github.com/QasimAli13/CampusHub-AI"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="secondary-btn"
+                  >GitHub</a
                 >
-                  GitHub
-                </a>
               </div>
             </div>
           </article>
@@ -215,36 +193,32 @@
                 loading="lazy"
               />
             </div>
-
             <div class="project-content">
               <h3>PayPulse</h3>
               <p>
                 A digital banking-style app built to understand money movement
-                properly; transfers, verification, savings goals, transaction
+                properly — transfers, verification, savings goals, transaction
                 history, and PDF statements. The real work was in state handling
-                and security, not just in making the UI look like a banking app.
+                and security.
               </p>
               <p class="tech-text">
                 React / Node.js / Express / MongoDB / JWT / jsPDF
               </p>
-
               <div class="link-row">
                 <a
                   href="https://pay-pulse-three.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="primary-btn"
+                  >Live Demo</a
                 >
-                  Live Demo
-                </a>
                 <a
                   href="https://github.com/QasimAli13/PayPulse.git"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="secondary-btn"
+                  >GitHub</a
                 >
-                  GitHub
-                </a>
               </div>
             </div>
           </article>
@@ -258,7 +232,6 @@
                 loading="lazy"
               />
             </div>
-
             <div class="project-content">
               <h3>BugTracker</h3>
               <p>
@@ -270,24 +243,21 @@
               <p class="tech-text">
                 React / Node.js / Express / MongoDB / Tailwind CSS
               </p>
-
               <div class="link-row">
                 <a
                   href="https://bugtracker-ai.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="primary-btn"
+                  >Live Demo</a
                 >
-                  Live Demo
-                </a>
                 <a
                   href="https://github.com/QasimAli13/BugTracker"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="secondary-btn"
+                  >GitHub</a
                 >
-                  GitHub
-                </a>
               </div>
             </div>
           </article>
@@ -301,54 +271,49 @@
                 loading="lazy"
               />
             </div>
-
             <div class="project-content">
               <h3>WeatherTrack</h3>
               <p>
                 A smaller project, but one I actually use. It pulls
                 location-based weather from Open-Meteo and shows current
-                conditions, hourly changes, and a seven-day forecast, clean and
+                conditions, hourly changes, and a seven-day forecast — clean and
                 without unnecessary complexity.
               </p>
               <p class="tech-text">
                 JavaScript ES6+ / HTML5 / CSS3 / Open-Meteo API
               </p>
-
               <div class="link-row">
                 <a
                   href="https://weather-app-inky-delta-38.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="primary-btn"
+                  >Live Demo</a
                 >
-                  Live Demo
-                </a>
                 <a
                   href="https://github.com/QasimAli13/WeatherApp.git"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="secondary-btn"
+                  >GitHub</a
                 >
-                  GitHub
-                </a>
               </div>
             </div>
           </article>
         </div>
       </section>
 
+      <!-- EXPERIENCE SECTION -->
       <section id="experience" class="content-block">
         <div class="section-head">
           <span class="section-index">03</span>
           <h2>Experience</h2>
         </div>
-
         <div class="timeline-card reveal">
           <div class="timeline-meta">
             <h3>Full-Stack Web Development</h3>
             <span class="timeline-date">Ongoing · Project-Based</span>
           </div>
-
           <ul>
             <li>
               <strong>Built complete MERN applications</strong> — React
@@ -363,29 +328,27 @@
             </li>
             <li>
               <strong>Deployed and maintained projects</strong> with Git,
-              GitHub, Vercel, and Render including the less glamorous parts:
+              GitHub, Vercel, and Render — including the less glamorous parts:
               environment variables, CORS, and production debugging.
             </li>
           </ul>
         </div>
       </section>
 
+      <!-- EDUCATION SECTION -->
       <section id="education" class="content-block">
         <div class="section-head">
           <span class="section-index">04</span>
           <h2>Education</h2>
         </div>
-
         <div class="info-card reveal">
           <div class="timeline-meta">
             <h3>BS Software Engineering</h3>
             <span class="timeline-date">Currently Enrolled</span>
           </div>
-
           <p class="institution">
             Punjab University College of Information Technology — Lahore
           </p>
-
           <p>
             Strong in core computer science fundamentals, with a hands-on
             approach to problem-solving and building practical software
@@ -394,12 +357,12 @@
         </div>
       </section>
 
+      <!-- SKILLS SECTION -->
       <section id="skills" class="content-block">
         <div class="section-head">
           <span class="section-index">05</span>
           <h2>Skills</h2>
         </div>
-
         <div class="skills-layout">
           <div class="skill-group reveal">
             <h3>Languages</h3>
@@ -409,7 +372,6 @@
               <span class="tag">C</span>
             </div>
           </div>
-
           <div class="skill-group reveal">
             <h3>Frontend</h3>
             <div class="skill-cloud">
@@ -421,7 +383,6 @@
               <span class="tag">Axios</span>
             </div>
           </div>
-
           <div class="skill-group reveal">
             <h3>Backend & Data</h3>
             <div class="skill-cloud">
@@ -433,7 +394,6 @@
               <span class="tag">JWT Auth</span>
             </div>
           </div>
-
           <div class="skill-group reveal">
             <h3>Tools & Delivery</h3>
             <div class="skill-cloud">
@@ -449,31 +409,28 @@
         </div>
       </section>
 
+      <!-- CONTACT SECTION -->
       <section id="contact" class="content-block">
         <div class="section-head">
           <span class="section-index">06</span>
           <h2>Get In Touch</h2>
         </div>
-
         <div class="contact-shell">
           <div class="contact-info-panel reveal">
             <span class="contact-eyebrow">Open to opportunities</span>
-
             <h3 class="contact-lead-title">
               Let’s build something worth shipping.
             </h3>
-
             <p class="contact-lead-desc">
               If you have an internship, a project idea, or just want to talk
               about something you’re building, my inbox is open.
             </p>
-
             <ul class="contact-list">
               <li>
                 <a href="mailto:qa44512226@gmail.com" class="contact-row">
-                  <span class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+                  <span class="contact-icon"
+                    ><i class="fas fa-envelope"></i
+                  ></span>
                   <span class="contact-text">
                     <span class="contact-label">Email</span>
                     <span class="contact-value">qa44512226@gmail.com</span>
@@ -481,7 +438,6 @@
                   <i class="fas fa-arrow-right contact-arrow"></i>
                 </a>
               </li>
-
               <li>
                 <a
                   href="https://github.com/QasimAli13"
@@ -489,9 +445,9 @@
                   rel="noopener noreferrer"
                   class="contact-row"
                 >
-                  <span class="contact-icon">
-                    <i class="fab fa-github"></i>
-                  </span>
+                  <span class="contact-icon"
+                    ><i class="fab fa-github"></i
+                  ></span>
                   <span class="contact-text">
                     <span class="contact-label">GitHub</span>
                     <span class="contact-value">github.com/QasimAli13</span>
@@ -499,7 +455,6 @@
                   <i class="fas fa-arrow-right contact-arrow"></i>
                 </a>
               </li>
-
               <li>
                 <a
                   href="https://www.linkedin.com/in/qasim-ali-18b485330"
@@ -507,9 +462,9 @@
                   rel="noopener noreferrer"
                   class="contact-row"
                 >
-                  <span class="contact-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                  </span>
+                  <span class="contact-icon"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></span>
                   <span class="contact-text">
                     <span class="contact-label">LinkedIn</span>
                     <span class="contact-value">linkedin.com/in/qasim-ali</span>
@@ -517,7 +472,6 @@
                   <i class="fas fa-arrow-right contact-arrow"></i>
                 </a>
               </li>
-
               <li>
                 <a
                   href="QASIM_ALI.pdf"
@@ -525,9 +479,9 @@
                   rel="noopener noreferrer"
                   class="contact-row"
                 >
-                  <span class="contact-icon">
-                    <i class="fas fa-file-lines"></i>
-                  </span>
+                  <span class="contact-icon"
+                    ><i class="fas fa-file-lines"></i
+                  ></span>
                   <span class="contact-text">
                     <span class="contact-label">Resume</span>
                     <span class="contact-value">View PDF Resume</span>
@@ -544,10 +498,8 @@
               Have an internship, collaboration, or product idea in mind? Share
               a few details and I’ll get back to you.
             </p>
-
             <form
               id="contact-form"
-              class="contact-form"
               action="https://api.web3forms.com/submit"
               method="POST"
             >
@@ -585,7 +537,6 @@
                     required
                   />
                 </div>
-
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input
@@ -597,28 +548,20 @@
                   />
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
-                  placeholder="Share a few details about the opportunity, project, or idea..."
+                  placeholder="Share a few details..."
                   required
                 ></textarea>
               </div>
-
               <button type="submit" class="primary-btn submit-btn">
                 Send Message
               </button>
-
-              <p
-                id="form-status"
-                class="form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
+              <p id="form-status" class="form-status"></p>
             </form>
           </div>
         </div>
@@ -626,7 +569,7 @@
     </main>
 
     <footer class="footer">
-      <p>© <span id="year">2025</span> Qasim Ali. All rights reserved.</p>
+      <p>© <span id="year">2026</span> Qasim Ali. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

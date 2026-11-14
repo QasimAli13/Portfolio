@@ -5,15 +5,16 @@ const THEME_KEY = "theme";
 
 function applyTheme(isDark) {
   body.classList.toggle("dark-mode", isDark);
+  body.classList.toggle("light-mode", !isDark);
+
   const icon = darkModeBtn?.querySelector("i");
-  if (icon) icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
-  darkModeBtn?.setAttribute(
-    "aria-label",
-    isDark ? "Switch to light mode" : "Switch to dark mode",
-  );
+  if (icon) {
+    icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
+  }
 }
 
-applyTheme(localStorage.getItem(THEME_KEY) === "dark");
+// Dark is the default; light only if the visitor chose it before
+applyTheme(localStorage.getItem(THEME_KEY) !== "light");
 
 darkModeBtn?.addEventListener("click", () => {
   const isDark = !body.classList.contains("dark-mode");
@@ -21,24 +22,36 @@ darkModeBtn?.addEventListener("click", () => {
   localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
 });
 
-/* ===== MENU ===== */
+/* ===== NAVBAR SCROLL STATE ===== */
+const topbar = document.querySelector(".topbar");
+
+window.addEventListener(
+  "scroll",
+  () => topbar?.classList.toggle("scrolled", window.scrollY > 20),
+  { passive: true },
+);
+
+/* ===== MOBILE MENU ===== */
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 
 function closeMenu() {
   menu?.classList.remove("menu-open");
   hamburger?.setAttribute("aria-expanded", "false");
+
   const icon = hamburger?.querySelector("i");
   if (icon) icon.className = "fas fa-bars";
 }
 
 hamburger?.addEventListener("click", () => {
   const isOpen = menu?.classList.contains("menu-open");
+
   if (isOpen) {
     closeMenu();
   } else {
     menu?.classList.add("menu-open");
     hamburger.setAttribute("aria-expanded", "true");
+
     const icon = hamburger.querySelector("i");
     if (icon) icon.className = "fas fa-xmark";
   }
@@ -48,284 +61,180 @@ document.querySelectorAll(".menu a").forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 
-document.addEventListener("click", (e) => {
-  if (!menu?.classList.contains("menu-open")) return;
-  if (menu.contains(e.target) || hamburger?.contains(e.target)) return;
-  closeMenu();
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeMenu();
+document.addEventListener("click", (event) => {
+  if (!menu?.contains(event.target) && !hamburger?.contains(event.target)) {
+    closeMenu();
+  }
 });
 
-/* ===== SMOOTH SCROLL ===== */
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (!href || href === "#") return;
-    const target = document.querySelector(href);
-    if (!target) return;
-    e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-    history.pushState(null, "", href);
-  });
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 880) closeMenu();
 });
 
 /* ===== SCROLL REVEAL ===== */
-const revealEls = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window && revealEls.length) {
-  const io = new IntersectionObserver(
+if ("IntersectionObserver" in window && revealElements.length) {
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          io.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+    { threshold: 0.1 },
   );
 
-  revealEls.forEach((el) => io.observe(el));
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  // Fallback: show everything if IntersectionObserver is unavailable
+  revealElements.forEach((element) => element.classList.add("visible"));
 }
 
-/* ===== STICKY HEADER SHADOW ===== */
-(function headerScroll() {
-  const topbar = document.querySelector(".topbar");
-  if (!topbar) return;
-  const onScroll = () => {
-    topbar.classList.toggle("scrolled", window.scrollY > 10);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-})();
-
 /* ===== FOOTER YEAR ===== */
-(function footerYear() {
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+/* ===== PROJECT HORIZONTAL SCROLL ===== */
+(function projectHorizontalScroll() {
+  const scroller = document.querySelector(".project-scroller");
+
+  if (!scroller) return;
+
+  scroller.addEventListener(
+    "wheel",
+    (event) => {
+      if (event.shiftKey && Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+        scroller.scrollLeft += event.deltaY;
+      }
+    },
+    { passive: false },
+  );
+
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let hasDragged = false;
+
+  scroller.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    hasDragged = false;
+    scroller.style.cursor = "grabbing";
+
+    // Snap and smooth scrolling fight with manual dragging, so pause them
+    scroller.style.scrollSnapType = "none";
+    scroller.style.scrollBehavior = "auto";
+
+    startX = event.pageX - scroller.offsetLeft;
+    startScrollLeft = scroller.scrollLeft;
+  });
+
+  const stopDragging = () => {
+    if (!isDragging) return;
+
+    isDragging = false;
+    scroller.style.cursor = "";
+    scroller.style.scrollSnapType = "";
+    scroller.style.scrollBehavior = "";
+  };
+
+  scroller.addEventListener("mouseleave", stopDragging);
+  window.addEventListener("mouseup", stopDragging);
+
+  scroller.addEventListener("mousemove", (event) => {
+    if (!isDragging) return;
+
+    event.preventDefault();
+
+    const currentX = event.pageX - scroller.offsetLeft;
+    const dragDistance = (currentX - startX) * 1.5;
+
+    if (Math.abs(dragDistance) > 6) {
+      hasDragged = true;
+    }
+
+    scroller.scrollLeft = startScrollLeft - dragDistance;
+  });
+
+  // Stop the browser's native image/link dragging
+  scroller.addEventListener("dragstart", (event) => event.preventDefault());
+
+  // Don't follow a link if the user was dragging
+  scroller.addEventListener(
+    "click",
+    (event) => {
+      if (!hasDragged) return;
+
+      const clickedLink = event.target.closest("a");
+
+      if (clickedLink) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      hasDragged = false;
+    },
+    true,
+  );
 })();
 
-/* ===== CONTACT FORM (Web3Forms) ===== */
+/* ===== CONTACT FORM ===== */
 (function contactForm() {
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
+
   if (!form || !status) return;
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (submitBtn) submitBtn.disabled = true;
+
     status.textContent = "Sending...";
     status.className = "form-status";
 
-    const data = new FormData(form);
-    const json = Object.fromEntries(data.entries());
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    delete payload.botcheck;
 
     try {
-      const res = await fetch(form.action, {
+      const response = await fetch(form.action, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(json),
+        body: JSON.stringify(payload),
       });
-      const result = await res.json();
 
-      if (res.ok && result.success) {
-        status.textContent = "Message sent. I'll get back to you soon.";
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        status.textContent = "Message sent successfully!";
         status.className = "form-status success";
         form.reset();
       } else {
-        status.textContent =
-          result.message || "Something went wrong. Please try again.";
+        status.textContent = result.message || "Something went wrong.";
         status.className = "form-status error";
       }
-    } catch (err) {
-      status.textContent =
-        "Network error. Please try again or email me directly.";
+    } catch (error) {
+      status.textContent = "Network error. Please try again.";
       status.className = "form-status error";
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
-})();
-
-/* ============ HERO PARTICLE CONSTELLATION ============ */
-(function heroParticles() {
-  const canvas = document.querySelector(".hero-canvas");
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  const shell = canvas.parentElement;
-
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-
-  let w = 0,
-    h = 0,
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let particles = [];
-  const mouse = { x: -9999, y: -9999, active: false };
-
-  function resize() {
-    const rect = shell.getBoundingClientRect();
-    w = rect.width;
-    h = rect.height;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    const count = Math.max(40, Math.floor((w * h) / 16000));
-    particles = new Array(count).fill(0).map(() => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 1.6 + 0.6,
-    }));
-  }
-
-  const linkDist = 130;
-  const mouseDist = 160;
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-
-    for (let i = 0; i < particles.length; i++) {
-      const a = particles[i];
-      for (let j = i + 1; j < particles.length; j++) {
-        const b = particles[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const d = Math.hypot(dx, dy);
-        if (d < linkDist) {
-          const alpha = (1 - d / linkDist) * 0.35;
-          ctx.strokeStyle = "rgba(78, 168, 189, " + alpha + ")";
-          ctx.lineWidth = 0.7;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    for (const p of particles) {
-      ctx.beginPath();
-      ctx.fillStyle = "rgba(201, 169, 97, 0.85)";
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function step() {
-    for (const p of particles) {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > w) p.vx *= -1;
-      if (p.y < 0 || p.y > h) p.vy *= -1;
-
-      if (mouse.active) {
-        const dx = p.x - mouse.x;
-        const dy = p.y - mouse.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < mouseDist * mouseDist) {
-          const f = (1 - Math.sqrt(d2) / mouseDist) * 0.6;
-          p.x += (dx / (Math.sqrt(d2) || 1)) * f;
-          p.y += (dy / (Math.sqrt(d2) || 1)) * f;
-        }
-      }
-    }
-
-    draw();
-    requestAnimationFrame(step);
-  }
-
-  shell.addEventListener("mousemove", (e) => {
-    const r = shell.getBoundingClientRect();
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-    mouse.active = true;
-  });
-  shell.addEventListener("mouseleave", () => {
-    mouse.active = false;
-    mouse.x = mouse.y = -9999;
-  });
-
-  window.addEventListener("resize", resize);
-  resize();
-
-  if (reduceMotion) {
-    draw();
-  } else {
-    step();
-  }
-})();
-/* ============ PROJECT HORIZONTAL SCROLL ============ */
-(function projectHorizontalScroll() {
-  const scroller = document.querySelector(".project-scroller");
-  if (!scroller) return;
-
-  // Shift + wheel → horizontal scroll (normal wheel → page scroll)
-  scroller.addEventListener(
-    "wheel",
-    (e) => {
-      if (e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        scroller.scrollLeft += e.deltaY;
-      }
-      // else: do nothing — let page scroll vertically
-    },
-    { passive: false },
-  );
-
-  // Drag to scroll (desktop)
-  let isDown = false;
-  let startX = 0;
-  let scrollStart = 0;
-  let moved = false;
-
-  scroller.addEventListener("mousedown", (e) => {
-    isDown = true;
-    moved = false;
-    scroller.style.cursor = "grabbing";
-    scroller.style.userSelect = "none";
-    startX = e.pageX - scroller.offsetLeft;
-    scrollStart = scroller.scrollLeft;
-  });
-
-  const stopDrag = () => {
-    isDown = false;
-    scroller.style.cursor = "";
-    scroller.style.userSelect = "";
-  };
-
-  scroller.addEventListener("mouseleave", stopDrag);
-  scroller.addEventListener("mouseup", stopDrag);
-
-  scroller.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scroller.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    if (Math.abs(walk) > 4) moved = true;
-    scroller.scrollLeft = scrollStart - walk;
-  });
-
-  // Prevent click on links if user was dragging
-  scroller.addEventListener(
-    "click",
-    (e) => {
-      if (moved) {
-        e.preventDefault();
-        e.stopPropagation();
-        moved = false;
-      }
-    },
-    true,
-  );
-
-  // Touch swipe → horizontal (browser handles natively with overflow-x auto)
 })();
